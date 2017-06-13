@@ -1,0 +1,94 @@
+body{
+  margin-left: 1em;
+  /*background-image: url(/img/spectrum.gif);*/
+  background-size: cover;
+}
+
+a:hover{
+  color: white;
+}
+div{
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  margin-right: 50px;
+  color: white;
+  text-indent: 1em;
+  border: 1px solid black;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  transition: width 2s,height 2s;
+  animation-name: moving;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  float: left;
+  font-size: 15px;
+
+
+
+}
+div:hover{
+  width: 300px;
+  height: 300px;
+}
+@keyframes moving {
+    0%{background-color: red;}
+    10%{background-color: orange;}
+    20%{background-color: yellow;}
+    30%{background-color: green;}
+    40%{background-color: blue;}
+    50%{background-color: purple;}
+    60%{background-color: blue;}
+    70%{background-color: green;}
+    80%{background-color: yellow;}
+    90%{background-color: orange;}
+    100%{background-color: red;}
+}
+
+img{
+  position: relative;
+  top: -50px;
+  left: 27px;
+
+}
+
+#red_box{
+  background-color: red;
+
+
+
+}
+#orange_box{
+  background-color: orange;
+
+}
+#yellow_box{
+  background-color: yellow;
+clear: both;
+
+}
+#green_box{
+  background-color: green;
+
+
+}
+#blue_box{
+  background-color: blue;
+
+clear: both;
+}
+#purple_box{
+  background-color: purple;
+
+}
+div a{
+  position: relative;
+  top: -55px;
+}
+a:visited{
+  color: magenta;
+}
+a:hover{
+  color: white;
+}

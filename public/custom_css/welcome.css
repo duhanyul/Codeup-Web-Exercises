@@ -1,0 +1,45 @@
+body{
+  background-color: #F9F9F9;
+  position: relative;
+  /*padding-bottom: 10em;*/
+}
+.min-height {
+  background-image: url('/img/port_4.jpeg');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  text-align: center;
+  color: white;
+  font-family: custom2
+}
+.container-fluid-padding{
+  padding-bottom: 21em;
+  font-family: custom2;
+}
+
+@font-face {
+  font-family: custom1;
+  src: url('ostrich-inline-regular.ttf');
+}
+@font-face {
+  font-family: custom2;
+  src: url('ostrich-sans-bold.woff');
+}
+.custom-f{
+  background-color: black;
+  background-image: none;
+  text-align: right;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.cust-title{
+  color: #FF2E1C;
+  font-size: 250px;
+  font-family: custom1;
+  width: 100%
+}

@@ -1,0 +1,39 @@
+body{
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.header-img img{
+  width: 100%;
+}
+.nav-links{
+  list-style: none;
+
+}
+@media screen and (min-width:900px) {
+  body{
+    text-align: left;
+  }
+  .alert-info a{
+    display: none;
+  }
+.nav-links{
+  float: right;
+  }
+  h1{
+    display:inline-block;
+    float: left;
+  }
+  .nav-links li{
+    float: left;
+  }
+  .main{
+    text-align: left;
+
+  }
+  .sub-section{
+
+
+  }
+
+}

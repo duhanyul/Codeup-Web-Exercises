@@ -1,0 +1,34 @@
+h1{
+  font-family: fantasy;
+  color: #e62e00;
+  font-weight: bold;
+  text-align: center;
+}
+h3{
+  font-family: fantasy;
+  color: #e62e00;
+  font-weight: bold;
+}
+#email{
+
+  margin-bottom: 2.5px;
+}
+
+#textarea{
+margin-top: 2.5px;
+}
+
+#submit{
+  font-style: italic;
+  font-weight: bold;
+  color: blue;
+  background: linear-gradient(to right,black,white);
+  border-color: inherit;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+#drop{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

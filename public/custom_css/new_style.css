@@ -1,0 +1,40 @@
+body{
+  font-family:'Trebuchet MS',verdana;
+background-color: #d2d8c7;
+margin-top: 0;
+border: 5px;
+
+}
+.menu{
+  float: left;
+  width: 20%;
+  background-color: #999f8e;
+  max-height: 50%;
+
+
+}
+.menu li{
+  list-style: none;
+  padding-top: 1em;
+}
+.stuff{
+  width: 80%;
+  float: right;
+}
+.stuff h2,p{
+  margin-left: 1em;
+  text-align: left;
+}
+.stuff h1{
+  margin: .5em;
+}
+#menuC{
+  text-align: center;
+  margin-top: 1500px;
+  padding-bottom: 40px;
+}
+#column{
+  text-align: center;
+  margin-top: 149%;
+  margin-bottom: 50%;
+}

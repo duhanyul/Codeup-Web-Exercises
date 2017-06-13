@@ -1,0 +1,16 @@
+body{
+  background-color: #f2f2f2;
+  overflow: scroll;
+  max-height: 1000px;
+}
+.container>.header{
+  background-image: url('/img/portfolio.png');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  text-align: center;
+  <a href="#"><img src="img/stock_gif_1.gif" alt=""></a>
+  <a href="#"><img src="img/stock_gif_2.gif" alt=""></a>
