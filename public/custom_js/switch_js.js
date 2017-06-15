@@ -27,14 +27,8 @@ switch (color) {
   default:
     console.log("I do not know anything about that color");
     break;
-
-    // TODO: create a case statement that will handle every color except indigo and violet
-    // TODO: when a color is encountered log a message that tells the color, and an object of that color
-    //       example: Blue is the color of the sky.
-
-    // TODO: create a default case that will catch indigo and violet
-    // TODO: for the default case, log: I do not know anything by that color.
 }
+
 var totalCameron = 180;
 var totalRyan = 250;
 var totalGeorge = 320;
@@ -99,11 +93,31 @@ switch (luckyNumber) {
     console.log("Your total is " + newTotal + " Better luck next time");
     break;
   }
+
   var yourNumber = prompt('Please Enter a Number')
+  var numPlus = parseInt(yourNumber) + 100;
 
   if (isNaN(yourNumber)) {
     alert("THAT IS NOT A NUMBER")
-  }else if (yourNumber % 2 == 0) {
-    if(yourNumber > )
+  }else if (yourNumber == 0) {
+    console.log("The number " + yourNumber + " is neither positive nor negative");
+    console.log("The number 0 is even");
+    console.log("0 plus 100 is 100");
+  }else if ((yourNumber % 2) == 0) {
+    console.log("The number " + yourNumber + " is even");
+    if (yourNumber>0) {
+      console.log("The number " + yourNumber + " is positive");
+    }else {
+      console.log("The number " + yourNumber + " is negative");
+    }
 
+    console.log("The number " + yourNumber + " plus 100 is " + numPlus);
+  }else if ((yourNumber % 2) !== 0) {
+    console.log("The number " + yourNumber + " is odd");
+    if (yourNumber>0) {
+      console.log("The number " + yourNumber + " is positive");
+    }else {
+      console.log("The number " + yourNumber + " is negative");
+    }
+      console.log("The number " + yourNumber + " plus 100 is " + numPlus);
   }
