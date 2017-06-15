@@ -21,6 +21,5 @@ do {
   console.log(cones+" sold");
   console.log("number of cones remaining " + allCones);
   cones = Math.floor(Math.random() * 5) + 1;
-} while (allCones > 0){
+} while (allCones > 0);
   console.log("HOORAY! THEY ARE ALL SOLD!");
-};
