@@ -6,7 +6,7 @@ while (userNum % 2 == 0 || isNaN(userNum) || (userNum > 50 || userNum < 1)) {
 }
 
 for (var i = 1; i < 50; i++) {
-  if (i == 27) {
+  if (i == userNum) {
     console.log("Yikes! Skipping number: " + i);
     continue;
   }
