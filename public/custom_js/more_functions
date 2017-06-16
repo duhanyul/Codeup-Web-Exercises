@@ -1,0 +1,7 @@
+(function(){
+
+ function idenity(input){
+   return input;
+ }
+ console.log(idenity("hello"));
+})();
