@@ -1,0 +1,3347 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://php.codeup.com/content/javascript/arrays/iterating.html -->
+<html lang=""><head style="display: block;"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <title>Iterating · Codeup LAMP+J</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="./Iterating · Codeup LAMP+J_files/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="./Iterating · Codeup LAMP+J_files/scrollablecode.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Iterating · Codeup LAMP+J_files/player.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Iterating · Codeup LAMP+J_files/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Iterating · Codeup LAMP+J_files/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="./Iterating · Codeup LAMP+J_files/website(1).css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://php.codeup.com/content/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="http://php.codeup.com/content/gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    
+    
+    
+    
+
+    <script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script><link rel="prev" href="http://php.codeup.com/content/javascript/arrays/"><link rel="next" href="http://php.codeup.com/content/javascript/arrays/manipulating.html"><script type="text/javascript" async="" charset="UTF-8" src="./Iterating · Codeup LAMP+J_files/ei.js"></script></head>
+    <body>
+        
+  <script type="text/javascript" id="www-widgetapi-script" src="./Iterating · Codeup LAMP+J_files/www-widgetapi.js" async=""></script><script src="./Iterating · Codeup LAMP+J_files/iframe_api"></script><script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+  
+<div class="book without-animation with-summary font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.codeup.com/" target="_blank" class="custom-link">Codeup</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="http://php.codeup.com/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../html-css/">
+            
+                <a href="http://php.codeup.com/content/html-css/">
+            
+                    
+                    HTML and CSS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../html-css/introduction.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/introduction.html">
+            
+                    
+                    Introduction to HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../html-css/elements.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/elements.html">
+            
+                    
+                    HTML Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../html-css/forms.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/forms.html">
+            
+                    
+                    HTML Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../html-css/css-i/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-i/">
+            
+                    
+                    CSS I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../html-css/css-i/introduction.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-i/introduction.html">
+            
+                    
+                    Introduction to CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../../html-css/css-i/selectors-and-properties.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-i/selectors-and-properties.html">
+            
+                    
+                    Selectors and Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../../html-css/css-i/box-model.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-i/box-model.html">
+            
+                    
+                    Box Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../../html-css/css-i/positioning.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-i/positioning.html">
+            
+                    
+                    Positioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../html-css/css-ii/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-ii/">
+            
+                    
+                    CSS II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../html-css/css-ii/media-queries.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-ii/media-queries.html">
+            
+                    
+                    Media Queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../html-css/css-ii/grids.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-ii/grids.html">
+            
+                    
+                    Grids
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../../html-css/css-ii/bootstrap-introduction.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-ii/bootstrap-introduction.html">
+            
+                    
+                    Bootstrap Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../../html-css/css-ii/bootstrap-grid-system.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/html-css/css-ii/bootstrap-grid-system.html">
+            
+                    
+                    Bootstrap Grid System
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../git/">
+            
+                <a href="http://php.codeup.com/content/git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../git/creating-a-repository.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/creating-a-repository.html">
+            
+                    
+                    Creating a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../git/initializing-a-repository.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/initializing-a-repository.html">
+            
+                    
+                    Initializing a Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../git/adding-files.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/adding-files.html">
+            
+                    
+                    Adding Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../git/committing.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/committing.html">
+            
+                    
+                    Committing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../git/pushing-and-pulling.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/pushing-and-pulling.html">
+            
+                    
+                    Pushing and Pulling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../git/gitignore-file.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/gitignore-file.html">
+            
+                    
+                    Ignoring Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../git/branching.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/branching.html">
+            
+                    
+                    Branching
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../git/working-in-teams.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/git/working-in-teams.html">
+            
+                    
+                    Teamwork
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="http://php.codeup.com/content/javascript/">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../introduction-to-javascript.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/introduction-to-javascript.html">
+            
+                    
+                    Introduction To Javascript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../primitive-types.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/primitive-types.html">
+            
+                    
+                    Primitive Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../javascript-with-html.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/javascript-with-html.html">
+            
+                    
+                    JavaScript with HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../conditionals.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/conditionals.html">
+            
+                    
+                    Conditionals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../loops.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/loops.html">
+            
+                    
+                    Loops
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../functions.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="./" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/arrays/">
+            
+                    
+                    Arrays
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.7.1" data-path="iterating.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/arrays/iterating.html">
+            
+                    
+                    Iterating
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="manipulating.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/arrays/manipulating.html">
+            
+                    
+                    Manipulating
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="split-join.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/arrays/split-join.html">
+            
+                    
+                    Split Join
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../objects/" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/objects/">
+            
+                    
+                    Objects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../objects/math.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/javascript/objects/math.html">
+            
+                    
+                    Math
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../bom-and-dom/bom.html" style="">
+            
+                <a href="http://php.codeup.com/content/javascript/bom-and-dom/bom.html">
+            
+                    
+                    BOM and DOM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../bom-and-dom/dom-query-modify.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/javascript/bom-and-dom/dom-query-modify.html">
+            
+                    
+                    Dom Query Modify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../bom-and-dom/dom-events.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/javascript/bom-and-dom/dom-events.html">
+            
+                    
+                    Dom Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../bom-and-dom/calculator.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/javascript/bom-and-dom/calculator.html">
+            
+                    
+                    Build a Calculator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.4" data-path="../bom-and-dom/google_maps_api.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/javascript/bom-and-dom/google_maps_api.html">
+            
+                    
+                    Google Maps API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../jquery/">
+            
+                <a href="http://php.codeup.com/content/jquery/">
+            
+                    
+                    jQuery
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../jquery/selectors.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/selectors.html">
+            
+                    
+                    Selectors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../jquery/events/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/events/">
+            
+                    
+                    Events
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../jquery/events/mouse-events.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/events/mouse-events.html">
+            
+                    
+                    Mouse Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../jquery/events/keyboard-events.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/events/keyboard-events.html">
+            
+                    
+                    Keyboard Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../jquery/essential-methods/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/essential-methods/">
+            
+                    
+                    Essential Methods
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../jquery/essential-methods/attributes-and-css.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/essential-methods/attributes-and-css.html">
+            
+                    
+                    Attributes And CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../jquery/essential-methods/traversing.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/essential-methods/traversing.html">
+            
+                    
+                    Traversing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../jquery/effects/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/effects/">
+            
+                    
+                    Effects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../jquery/effects/show-hide-toggle.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/effects/show-hide-toggle.html">
+            
+                    
+                    Show, Hide, and Toggle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../jquery/effects/animate.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/effects/animate.html">
+            
+                    
+                    Animate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../jquery/ajax/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/ajax/">
+            
+                    
+                    Ajax Requests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../jquery/ajax/ajax-intro.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/ajax/ajax-intro.html">
+            
+                    
+                    Ajax Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../jquery/ajax/ajax-api-request.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/ajax/ajax-api-request.html">
+            
+                    
+                    Ajax API Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../jquery/simple-simon/create-game.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/simple-simon/create-game.html">
+            
+                    
+                    Simple Simon Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../jquery/resume-portfolio/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/jquery/resume-portfolio/">
+            
+                    
+                    Personal Site
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../php_i/">
+            
+                <a href="http://php.codeup.com/content/php_i/">
+            
+                    
+                    PHP I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../php_i/intro-via-interactive-shell/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-via-interactive-shell/">
+            
+                    
+                    Intro via Interactive Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../php_i/intro-via-interactive-shell/hello-world-and-other-strings.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-via-interactive-shell/hello-world-and-other-strings.html">
+            
+                    
+                    Hello World and Other Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../php_i/intro-via-interactive-shell/doing-math-in-the-shell.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-via-interactive-shell/doing-math-in-the-shell.html">
+            
+                    
+                    Doing Math in the Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../php_i/intro-via-interactive-shell/exiting-the-shell.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-via-interactive-shell/exiting-the-shell.html">
+            
+                    
+                    Exiting The Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../php_i/types-and-variables-i/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-i/">
+            
+                    
+                    Types and Variables I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../php_i/types-and-variables-i/boolean-data-type.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-i/boolean-data-type.html">
+            
+                    
+                    Boolean Data Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../php_i/types-and-variables-i/type-juggling-and-booleans.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-i/type-juggling-and-booleans.html">
+            
+                    
+                    Type Juggling and Booleans
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../../php_i/types-and-variables-i/intergers-and-floats.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-i/intergers-and-floats.html">
+            
+                    
+                    Integers and Floats
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="../../php_i/types-and-variables-i/introduction-to-strings.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-i/introduction-to-strings.html">
+            
+                    
+                    Introduction to Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../php_i/types-and-variables-ii/intro-to-strings-continued.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-ii/intro-to-strings-continued.html">
+            
+                    
+                    Types and Variables II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../../php_i/types-and-variables-ii/constants.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-ii/constants.html">
+            
+                    
+                    Constants
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../../php_i/types-and-variables-ii/intro-to-arrays.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-ii/intro-to-arrays.html">
+            
+                    
+                    Intro to Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../../php_i/types-and-variables-ii/objects-other-types-and-review.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/types-and-variables-ii/objects-other-types-and-review.html">
+            
+                    
+                    Objects &amp; Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../php_i/intro-to-operators/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-to-operators/">
+            
+                    
+                    Intro to Operators
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../../php_i/intro-to-operators/arithmetic-operators.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-to-operators/arithmetic-operators.html">
+            
+                    
+                    Arithmetic Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../../php_i/intro-to-operators/assignment-operators.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-to-operators/assignment-operators.html">
+            
+                    
+                    Assignment Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.3" data-path="../../php_i/intro-to-operators/comparison-operators.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-to-operators/comparison-operators.html">
+            
+                    
+                    Comparison Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.4" data-path="../../php_i/intro-to-operators/incrementing-and-decrementing-operators.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-to-operators/incrementing-and-decrementing-operators.html">
+            
+                    
+                    Incrementing &amp; Decrementing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.5" data-path="../../php_i/intro-to-operators/logical-operators.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_i/intro-to-operators/logical-operators.html">
+            
+                    
+                    Logical Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../php_ii/">
+            
+                <a href="http://php.codeup.com/content/php_ii/">
+            
+                    
+                    PHP II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../php_ii/control-structures-i/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-i/">
+            
+                    
+                    Control Structures I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../../php_ii/control-structures-i/if.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-i/if.html">
+            
+                    
+                    If
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../../php_ii/control-structures-i/if-continued.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-i/if-continued.html">
+            
+                    
+                    If Continued
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="../../php_ii/control-structures-i/else-elseif.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-i/else-elseif.html">
+            
+                    
+                    Else &amp; Elseif
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="../../php_ii/control-structures-i/while.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-i/while.html">
+            
+                    
+                    While
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.5" data-path="../../php_ii/control-structures-i/do-while.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-i/do-while.html">
+            
+                    
+                    Do While
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../php_ii/command-line/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/command-line/">
+            
+                    
+                    Command Line
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../../php_ii/command-line/io-streams.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/command-line/io-streams.html">
+            
+                    
+                    IO Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../../php_ii/command-line/passing-arguments.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/command-line/passing-arguments.html">
+            
+                    
+                    Passing Arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../php_ii/control-structures-ii/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-ii/">
+            
+                    
+                    Control Structures II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../../php_ii/control-structures-ii/for.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-ii/for.html">
+            
+                    
+                    For
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../../php_ii/control-structures-ii/foreach.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-ii/foreach.html">
+            
+                    
+                    Foreach
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.3" data-path="../../php_ii/control-structures-ii/foreach-with-keys.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-ii/foreach-with-keys.html">
+            
+                    
+                    Foreach with Keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.4" data-path="../../php_ii/control-structures-ii/break-continue.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-ii/break-continue.html">
+            
+                    
+                    Break &amp; Continue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.5" data-path="../../php_ii/control-structures-ii/switch.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/control-structures-ii/switch.html">
+            
+                    
+                    Switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../../php_ii/functions-i/definition-and-syntax.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/functions-i/definition-and-syntax.html">
+            
+                    
+                    Functions I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.4.1" data-path="../../php_ii/functions-i/arguments.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/functions-i/arguments.html">
+            
+                    
+                    Arguments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4.2" data-path="../../php_ii/functions-i/internal-functions.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/functions-i/internal-functions.html">
+            
+                    
+                    Internal Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../../php_ii/array-functions/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/array-functions/">
+            
+                    
+                    Array Functions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.5.1" data-path="../../php_ii/array-functions/sorting-arrays.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/array-functions/sorting-arrays.html">
+            
+                    
+                    Sorting Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5.2" data-path="../../php_ii/array-functions/searching-in-arrays.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/array-functions/searching-in-arrays.html">
+            
+                    
+                    Searching In Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5.3" data-path="../../php_ii/array-functions/push-and-pop.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/array-functions/push-and-pop.html">
+            
+                    
+                    Push and Pop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5.4" data-path="../../php_ii/array-functions/explode-and-implode.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/array-functions/explode-and-implode.html">
+            
+                    
+                    Explode and Implode
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../../php_ii/using-files/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/using-files/">
+            
+                    
+                    Using Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.6.1" data-path="../../php_ii/using-files/reading-files.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/using-files/reading-files.html">
+            
+                    
+                    Reading Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6.2" data-path="../../php_ii/using-files/writing-to-files.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/using-files/writing-to-files.html">
+            
+                    
+                    Writing to Files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6.3" data-path="../../php_ii/using-files/contacts-manager.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_ii/using-files/contacts-manager.html">
+            
+                    
+                    Contacts Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../php_iii/">
+            
+                <a href="http://php.codeup.com/content/php_iii/">
+            
+                    
+                    PHP III
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../php_iii/php-with-html/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/">
+            
+                    
+                    PHP with HTML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../../php_iii/php-with-html/alternative-syntax.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/alternative-syntax.html">
+            
+                    
+                    Alternative Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../../php_iii/php-with-html/view-controller-separation.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/view-controller-separation.html">
+            
+                    
+                    View/Controller Separation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../../php_iii/php-with-html/get-with-php.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/get-with-php.html">
+            
+                    
+                    GET Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="../../php_iii/php-with-html/post-with-php.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/post-with-php.html">
+            
+                    
+                    POST Requests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.5" data-path="../../php_iii/php-with-html/handling-user-input.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/handling-user-input.html">
+            
+                    
+                    Handling User Input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.6" data-path="../../php_iii/php-with-html/sessions-with-php.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/php-with-html/sessions-with-php.html">
+            
+                    
+                    Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../php_iii/include-and-require.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/include-and-require.html">
+            
+                    
+                    Include and Require
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../php_iii/classes-and-objects-i/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/classes-and-objects-i/">
+            
+                    
+                    Classes and Objects I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../php_iii/classes-and-objects-i/constructors-destructors.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/classes-and-objects-i/constructors-destructors.html">
+            
+                    
+                    Constructors &amp; Destructors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../../php_iii/classes-and-objects-i/static.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/classes-and-objects-i/static.html">
+            
+                    
+                    Static Methods &amp; Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../../php_iii/classes-and-objects-i/authentication.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iii/classes-and-objects-i/authentication.html">
+            
+                    
+                    Authentication Wrapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../mysql/intro-to-mysql/">
+            
+                <a href="http://php.codeup.com/content/mysql/intro-to-mysql/">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../mysql/intro-to-mysql/users.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/intro-to-mysql/users.html">
+            
+                    
+                    Users
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../mysql/intro-to-mysql/databases.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/intro-to-mysql/databases.html">
+            
+                    
+                    Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../mysql/intro-to-mysql/tables.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/intro-to-mysql/tables.html">
+            
+                    
+                    Tables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../mysql/basic-statements/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/basic-statements/">
+            
+                    
+                    Basic Statements
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.4.1" data-path="../../mysql/basic-statements/insert.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/basic-statements/insert.html">
+            
+                    
+                    Insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.2" data-path="../../mysql/basic-statements/select.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/basic-statements/select.html">
+            
+                    
+                    Select
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.3" data-path="../../mysql/basic-statements/update.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/basic-statements/update.html">
+            
+                    
+                    Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4.4" data-path="../../mysql/basic-statements/delete.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/basic-statements/delete.html">
+            
+                    
+                    Delete
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../mysql/sample-database/setting-up-sample-db.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/sample-database/setting-up-sample-db.html">
+            
+                    
+                    Setting Up Sample DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../mysql/sequel-pro/installing-sequel-pro.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/sequel-pro/installing-sequel-pro.html">
+            
+                    
+                    Installing Sequel Pro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../../mysql/clauses/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/clauses/">
+            
+                    
+                    MySQL Clauses
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.7.1" data-path="../../mysql/clauses/where.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/clauses/where.html">
+            
+                    
+                    Where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.2" data-path="../../mysql/clauses/where-continued.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/clauses/where-continued.html">
+            
+                    
+                    Where Continued
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.3" data-path="../../mysql/clauses/order-by.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/clauses/order-by.html">
+            
+                    
+                    Order By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.4" data-path="../../mysql/clauses/group-by.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/clauses/group-by.html">
+            
+                    
+                    Group By
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.5" data-path="../../mysql/clauses/limit.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/clauses/limit.html">
+            
+                    
+                    Limit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../../mysql/aliases-and-functions/functions.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/aliases-and-functions/functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../../mysql/aliases-and-functions/aliases.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/aliases-and-functions/aliases.html">
+            
+                    
+                    Aliases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../../mysql/relationships/relationships.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/relationships/relationships.html">
+            
+                    
+                    Relationships
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.10.1" data-path="../../mysql/relationships/indexes.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/relationships/indexes.html">
+            
+                    
+                    Indexes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10.2" data-path="../../mysql/relationships/joins.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/relationships/joins.html">
+            
+                    
+                    Joins
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10.3" data-path="../../mysql/relationships/sub-queries.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/mysql/relationships/sub-queries.html">
+            
+                    
+                    Sub-Queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../php_iv/">
+            
+                <a href="http://php.codeup.com/content/php_iv/">
+            
+                    
+                    PHP IV
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../php_iv/php-with-mysql/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/php-with-mysql/">
+            
+                    
+                    PHP with MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../../php_iv/php-with-mysql/connect-to-db.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/php-with-mysql/connect-to-db.html">
+            
+                    
+                    Connect to a DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2" data-path="../../php_iv/php-with-mysql/executing-queries.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/php-with-mysql/executing-queries.html">
+            
+                    
+                    Executing Queries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.3" data-path="../../php_iv/php-with-mysql/query-and-results.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/php-with-mysql/query-and-results.html">
+            
+                    
+                    Query and Results
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.4" data-path="../../php_iv/php-with-mysql/prepared-statements.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/php-with-mysql/prepared-statements.html">
+            
+                    
+                    Prepared Statements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.5" data-path="../../php_iv/php-with-mysql/create-a-park-model.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/php-with-mysql/create-a-park-model.html">
+            
+                    
+                    Build a Park Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../php_iv/classes-and-objects-ii/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/">
+            
+                    
+                    Classes and Objects II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../../php_iv/classes-and-objects-ii/inheritance.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/inheritance.html">
+            
+                    
+                    Inheritance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../../php_iv/classes-and-objects-ii/overriding.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/overriding.html">
+            
+                    
+                    Overriding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../../php_iv/classes-and-objects-ii/visibility.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/visibility.html">
+            
+                    
+                    Visibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../../php_iv/classes-and-objects-ii/magic-methods.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/magic-methods.html">
+            
+                    
+                    Magic Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.5" data-path="../../php_iv/classes-and-objects-ii/late-static-binding.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/late-static-binding.html">
+            
+                    
+                    Late Static Binding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../php_iv/exceptions/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/exceptions/">
+            
+                    
+                    Exceptions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="../../php_iv/exceptions/throwing.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/exceptions/throwing.html">
+            
+                    
+                    Throwing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2" data-path="../../php_iv/exceptions/try-catch.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/exceptions/try-catch.html">
+            
+                    
+                    Try Catch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.3" data-path="../../php_iv/exceptions/custom-exceptions.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/exceptions/custom-exceptions.html">
+            
+                    
+                    Custom Exceptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../../php_iv/classes-and-objects-ii/build-a-model.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/classes-and-objects-ii/build-a-model.html">
+            
+                    
+                    Build a Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../../php_iv/ad-lister/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/php_iv/ad-lister/">
+            
+                    
+                    Ad Lister Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../laravel/intro/">
+            
+                <a href="http://php.codeup.com/content/laravel/intro/">
+            
+                    
+                    Laravel
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../laravel/intro/environment.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/intro/environment.html">
+            
+                    
+                    Environment Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../laravel/intro/application-structure.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/intro/application-structure.html">
+            
+                    
+                    Fundamentals
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../../laravel/quickstart/basic-routing.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/basic-routing.html">
+            
+                    
+                    Basic Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="../../laravel/quickstart/views.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/views.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.3" data-path="../../laravel/quickstart/templating.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/templating.html">
+            
+                    
+                    Templating
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.4" data-path="../../laravel/quickstart/controllers.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/controllers.html">
+            
+                    
+                    Controllers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.5" data-path="../../laravel/quickstart/artisan.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/artisan.html">
+            
+                    
+                    Artisan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.6" data-path="../../laravel/quickstart/db-migrations.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/db-migrations.html">
+            
+                    
+                    DB Migrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.7" data-path="../../laravel/quickstart/resource-controllers.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/resource-controllers.html">
+            
+                    
+                    Resource Controllers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.8" data-path="../../laravel/quickstart/inputs.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/inputs.html">
+            
+                    
+                    Inputs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.9" data-path="../../laravel/quickstart/eloquent-orm.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/eloquent-orm.html">
+            
+                    
+                    Eloquent ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.10" data-path="../../laravel/quickstart/validation.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/validation.html">
+            
+                    
+                    Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.11" data-path="../../laravel/quickstart/pagination.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/pagination.html">
+            
+                    
+                    Pagination
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.12" data-path="../../laravel/quickstart/dates.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/dates.html">
+            
+                    
+                    Dates
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.13" data-path="../../laravel/quickstart/sessions.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/sessions.html">
+            
+                    
+                    Sessions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.14" data-path="../../laravel/quickstart/namespacing.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/namespacing.html">
+            
+                    
+                    Namespacing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.15" data-path="../../laravel/quickstart/errors-and-logging.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/errors-and-logging.html">
+            
+                    
+                    Errors And Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.16" data-path="../../laravel/quickstart/composer.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/composer.html">
+            
+                    
+                    Composer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.17" data-path="../../laravel/quickstart/seeders.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/quickstart/seeders.html">
+            
+                    
+                    Database Seeding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../laravel/more-features/readme.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/more-features/readme.html">
+            
+                    
+                    More Features
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../../laravel/more-features/authentication.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/more-features/authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.2" data-path="../../laravel/more-features/mutators.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/more-features/mutators.html">
+            
+                    
+                    Mutators &amp; Accessors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.3" data-path="../../laravel/more-features/db-relationships.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/more-features/db-relationships.html">
+            
+                    
+                    Model Relationships
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.4" data-path="../../laravel/more-features/db-query-builder.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/more-features/db-query-builder.html">
+            
+                    
+                    Query Builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.5" data-path="../../laravel/more-features/reddit.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/laravel/more-features/reddit.html">
+            
+                    
+                    Additional Features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../appendix/">
+            
+                <a href="http://php.codeup.com/content/appendix/">
+            
+                    
+                    Appendix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../appendix/angular/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/angular/">
+            
+                    
+                    Angular
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="../../appendix/angular/templating.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/angular/templating.html">
+            
+                    
+                    Expressions and Directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="../../appendix/angular/models.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/angular/models.html">
+            
+                    
+                    Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="../../appendix/angular/controllers.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/angular/controllers.html">
+            
+                    
+                    Controllers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.4" data-path="../../appendix/angular/dependencies.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/angular/dependencies.html">
+            
+                    
+                    Dependencies and Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../appendix/code-standards/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/code-standards/">
+            
+                    
+                    Code Standards
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../../appendix/code-standards/html-css.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/code-standards/html-css.html">
+            
+                    
+                    HTML and CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../../appendix/code-standards/javascript.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/code-standards/javascript.html">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.3" data-path="../../appendix/code-standards/mysql.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/code-standards/mysql.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.4" data-path="../../appendix/code-standards/php.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/code-standards/php.html">
+            
+                    
+                    PHP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../../appendix/documentation/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/documentation/">
+            
+                    
+                    Documentation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="../../appendix/documentation/phpdoc.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/documentation/phpdoc.html">
+            
+                    
+                    PHP Doc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../../appendix/postwork/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/">
+            
+                    
+                    Postwork
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.4.1" data-path="../../appendix/postwork/basic_challenges/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/basic_challenges/">
+            
+                    
+                    General Coding Challenges
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.2" data-path="../../appendix/postwork/website-status-page.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/website-status-page.html">
+            
+                    
+                    Website Status Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.3" data-path="../../appendix/postwork/memory-game.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/memory-game.html">
+            
+                    
+                    Memory Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.4" data-path="../../appendix/postwork/locations.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/locations.html">
+            
+                    
+                    Incidents Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.5" data-path="../../appendix/postwork/trains.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/trains.html">
+            
+                    
+                    Travel Distance Calculation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.6" data-path="../../appendix/postwork/sales-tax.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/sales-tax.html">
+            
+                    
+                    Sales Tax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.7" data-path="../../appendix/postwork/mars-rover.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/mars-rover.html">
+            
+                    
+                    Mars Rover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.8" data-path="../../postwork/dashboard.md" style="display: none;">
+            
+                <span>
+            
+                    
+                    Ajax Dashboard
+            
+                
+            
+
+            
+        </span></li>
+    
+        <li class="chapter " data-level="1.12.4.9" data-path="../../appendix/postwork/pdf-parser.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/pdf-parser.html">
+            
+                    
+                    PDF Parser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.10" data-path="../../appendix/postwork/beef-up-your-blog.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/beef-up-your-blog.html">
+            
+                    
+                    Beef Up Your Blog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.11" data-path="../../appendix/postwork/facebook-clone.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/postwork/facebook-clone.html">
+            
+                    
+                    Facebook Clone
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../../appendix/further-reading/" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/further-reading/">
+            
+                    
+                    Further Reading
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.5.1" data-path="../../appendix/further-reading/javascript/hoisting.html" style="display: none;">
+            
+                <a href="http://php.codeup.com/content/appendix/further-reading/javascript/hoisting.html">
+            
+                    
+                    Hoisting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="http://php.codeup.com/content/javascript/arrays/iterating.html#"><i class="fa fa-align-justify"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Font Settings" href="http://php.codeup.com/content/javascript/arrays/iterating.html#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 ">Serif</button><button class="button size-2 ">Sans</button></div><div class="buttons"><button class="button size-3 ">White</button><button class="button size-3 ">Sepia</button><button class="button size-3 ">Night</button></div></div></div><h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="http://php.codeup.com/">Iterating</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="iterating-over-arrays">Iterating Over Arrays</h1>
+<p>To iterate means to repeat a process to achieve a desired result. When you iterate over an array, it means that you cycle/traverse through the indices of the array. We can use the looping statements we learned earlier to iterate through arrays in JavaScript.</p>
+<h2 id="for-loop-iteration">For Loop Iteration</h2>
+<pre><code class="lang-js"><span class="hljs-meta">'use strict'</span>;
+<span class="hljs-comment">// declare and initialize array</span>
+<span class="hljs-keyword">var</span> shapes = [<span class="hljs-string">'square'</span>, <span class="hljs-string">'rectangle'</span>, <span class="hljs-string">'circle'</span>, <span class="hljs-string">'triangle'</span>];
+
+<span class="hljs-comment">// loop through the array and log the values</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; shapes.length; i++) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The shape at index '</span> + i + <span class="hljs-string">' is: '</span> + shapes[i]);
+}
+</code></pre>
+<h2 id="for-each-loop-iteration">For-Each Loop Iteration</h2>
+<p>Although JavaScript does not have a native foreach loop, array objects have a <code>forEach</code> function. This feature is supported in Internet Explorer 9+, Firefox 2+, Safari 3+, Opera 9.5+, and Chrome.</p>
+<pre><code class="lang-js"><span class="hljs-meta">'use strict'</span>;
+<span class="hljs-comment">// declare and initialize array</span>
+<span class="hljs-keyword">var</span> shapes = [<span class="hljs-string">'square'</span>, <span class="hljs-string">'rectangle'</span>, <span class="hljs-string">'circle'</span>, <span class="hljs-string">'triangle'</span>];
+
+<span class="hljs-comment">// loop through the array and log the values</span>
+shapes.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">element, index, array</span>) </span>{
+
+    <span class="hljs-comment">// element is the shape name</span>
+    <span class="hljs-comment">// index is the iterator</span>
+    <span class="hljs-comment">// array is the shapes array itself</span>
+
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The shape at index '</span> + index + <span class="hljs-string">' is: '</span> + element);
+});
+</code></pre>
+<p>The <code>forEach</code> function on an array takes another function as a parameter and doesn't have a return value. The function passed to <code>forEach</code> takes in up to 3 parameters that will provide access to the array element, the corresponding index, and the array itself.</p>
+<h2 id="exercises">Exercises</h2>
+<p>Please follow the instructions below.</p>
+<ol>
+<li>Open the <code>iterating.js</code> file that you created in the last lesson.</li>
+<li>Modify the code that logs the <code>names</code> array elements individually to instead use a <code>for</code> loop.</li>
+<li>Below the <code>for</code> loop, use a <code>forEach</code> loop to print the names again.</li>
+<li>View the results in your browser to test for the expected output.</li>
+<li>Finally, save your work, commit the changes to your git repository, and push to GitHub.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="http://php.codeup.com/content/javascript/arrays/" class="navigation navigation-prev " aria-label="Previous page: Arrays">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="http://php.codeup.com/content/javascript/arrays/manipulating.html" class="navigation navigation-next " aria-label="Next page: Manipulating" style="margin-right: 0px;">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Iterating","level":"1.4.7.1","depth":3,"next":{"title":"Manipulating","level":"1.4.7.2","depth":3,"path":"content/javascript/arrays/manipulating.md","ref":"content/javascript/arrays/manipulating.md","articles":[]},"previous":{"title":"Arrays","level":"1.4.7","depth":2,"path":"content/javascript/arrays/README.md","ref":"content/javascript/arrays/README.md","articles":[{"title":"Iterating","level":"1.4.7.1","depth":3,"path":"content/javascript/arrays/iterating.md","ref":"content/javascript/arrays/iterating.md","articles":[]},{"title":"Manipulating","level":"1.4.7.2","depth":3,"path":"content/javascript/arrays/manipulating.md","ref":"content/javascript/arrays/manipulating.md","articles":[]},{"title":"Split Join","level":"1.4.7.3","depth":3,"path":"content/javascript/arrays/split-join.md","ref":"content/javascript/arrays/split-join.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["scrollablecode","jsbin","youtubex","collapsible-menu","codepen","video"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"search":{},"codepen":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"scrollablecode":{},"highlight":{},"youtubex":{"embedDescription":{"de":"Eingebettetes Video:","default":"Embedded video:"}},"video":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"jsbin":{}},"search":{"maxIndexSize":1000000000},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"curriculumName":"php-stack"},"title":"Codeup LAMP+J","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false},"sidebar":{"Codeup":"http://www.codeup.com"}},"gitbook":"*","description":"This is the curriculum for Codeup's LAMP+J bootcamp"},"file":{"path":"content/javascript/arrays/iterating.md","mtime":"2017-06-14T20:47:34.856Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-14T20:48:47.392Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+        
+    <script src="./Iterating · Codeup LAMP+J_files/gitbook.js"></script>
+    <script src="./Iterating · Codeup LAMP+J_files/theme.js"></script>
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/plugin.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/player.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/plugin(1).js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/embed-codepen.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/search-engine.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/search.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/lunr.min.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/search-lunr.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/buttons.js"></script>
+        
+    
+        
+        <script src="./Iterating · Codeup LAMP+J_files/fontsettings.js"></script>
+        
+    
+
+    
+
+
+</body></html>
