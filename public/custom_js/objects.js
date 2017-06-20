@@ -50,6 +50,12 @@
     ];
     shoppers.forEach(function(shoppers){
       console.log("The Shopper is " + shoppers.name + " and their total amount is " + shoppers.amount );
+      if (shoppers.amount > 200) {
+        shoppers.amount = shoppers.amount - (shoppers.amount * 0.1);
+        console.log("After 10% discount " + shoppers.name + " 's total is " + shoppers.amount);
+      }else {
+        console.log(shoppers.name + " was not given a discount total still remains as " + shoppers.amount);
+      }
     });
 
     // todo:
@@ -59,44 +65,150 @@ var books  = [
       title: "Harry Potter",
       author: {
         firstName: "Jk",
-        lastName: "Rowling",
+        lastName: "Rowling"
+      },
+      genre: "Fantasy",
+      available: true,
+      avaliableDate: new Date(),
+      rent: function(){
+        if (this.available == true) {
+          this.available = false;
+        }
+
+        return rent(this.avaliableDate);
+      },
+      return: function(){
+        if (this.avaliable == false) {
+          this.avaliable = true;
+        }
+        return "Avaliable Now!"
       }
     },
-    {
-      title: "Bad Monkeys",
-      author: {
-        firstName: "Matt",
-        lastName: "Ruff",
-      }
-    },
-    {
-      title: "The Orphan's Tale",
-      author: {
-        firstName: "Pam ",
-        lastName: "Jenoff",
-      }
-    },
-    {
-      title: "Knowing God by Name",
-      author: {
-        firstName: "David Wilkerson",
-        lastName: "Wilkerson",
-      }
-    },
-    {
-      title: "Grey",
-      author: {
-        firstName: "E L ",
-        lastName: "Jamesk",
-      }
-    },
-    {
-      title: "Four Friends",
-      author: {
-        firstName: "Robyn",
-        lastName: "Carr",
-      }
-    }
+    // {
+    //   title: "Bad Monkeys",
+    //   author: {
+    //     firstName: "Matt",
+    //     lastName: "Ruff"
+    //   },
+    //   genre: "Thriller",
+    //   available: true,
+    //   rent: function(){
+    //
+    //     if (this.available == true) {
+    //       this.available = false;
+    //     }
+    //       var rentedDate = new Date();
+    //       var avaliableDate = new Date();
+    //       avaliableDate.setDate(rentedDate.getDate() + 14);
+    //       return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
+    //   },
+    //   return: function(){
+    //     if (this.avaliable == false) {
+    //       this.avaliable = true;
+    //     }
+    //     return "Avaliable Now!"
+    //   }
+    // },
+    // {
+    //   title: "The Orphan's Tale",
+    //   author: {
+    //     firstName: "Pam",
+    //     lastName: "Jenoff"
+    //   },
+    //   genre: "Historical Fiction",
+    //   available: true,
+    //   rent: function(){
+    //
+    //     if (this.available == true) {
+    //       this.available = false;
+    //     }
+    //       var rentedDate = new Date();
+    //       var avaliableDate = new Date();
+    //       avaliableDate.setDate(rentedDate.getDate() + 14);
+    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
+    //   },
+    //   return: function(){
+    //     if (this.avaliable == false) {
+    //       this.avaliable = true;
+    //     }
+    //     return "Avaliable Now!"
+    //   }
+    // },
+    // {
+    //   title: "Knowing God by Name",
+    //   author: {
+    //     firstName: "David",
+    //     lastName: "Wilkerson"
+    //   },
+    //   genre: "Religous Fiction",
+    //   available: true,
+    //   rent: function(){
+    //
+    //     if (this.available == true) {
+    //       this.available = false;
+    //     }
+    //       var rentedDate = new Date();
+    //       var avaliableDate = new Date();
+    //       avaliableDate.setDate(rentedDate.getDate() + 14);
+    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
+    //   },
+    //   return: function(){
+    //     if (this.avaliable == false) {
+    //       this.avaliable = true;
+    //     }
+    //     return "Avaliable Now!"
+    //   }
+    // },
+    // {
+    //   title: "Grey",
+    //   author: {
+    //     firstName: "E L",
+    //     lastName: "Jamesk"
+    //   },
+    //   genre: "Mysterey",
+    //   available: true,
+    //   rent: function(){
+    //
+    //     if (this.available == true) {
+    //       this.available = false;
+    //     }
+    //       var rentedDate = new Date();
+    //       var avaliableDate = new Date();
+    //       avaliableDate.setDate(rentedDate.getDate() + 14);
+    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
+    //   },
+    //   return: function(){
+    //     if (this.avaliable == false) {
+    //       this.avaliable = true;
+    //     }
+    //     return "Avaliable Now!"
+    //   }
+    // },
+    // {
+    //   title: "Four Friends",
+    //   author: {
+    //     firstName: "Robyn",
+    //     lastName: "Carr"
+    //   },
+    //   genre: "Slice of Life",
+    //   available: true,
+    //   rent: function(){
+    //
+    //     if (this.available == true) {
+    //       this.available = false;
+    //     }
+    //       var rentedDate = new Date();
+    //       var avaliableDate = new Date();
+    //       avaliableDate.setDate(rentedDate.getDate() + 14);
+    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
+    //   },
+    //   return: function(){
+    //     if (this.avaliable == false) {
+    //       this.avaliable = true;
+    //     }
+    //     return "Avaliable Now!"
+    //   }
+    // }
 ];
 // Each book should have a title and an author property.
 // The author property should be an object with a firstName and lastName.
@@ -104,19 +216,26 @@ var books  = [
 // var books = [todo];
 
 // log out the books array
-console.log(books);
+
 
 // todo:
 // Loop through the array of books using .forEach and print out the specified information about each one.
 // start loop here
-console.log(books[1].author);
-books.forEach(function(element,index,array){
-    console.log("Book #" + index);
-    console.log("Title: " + books[index].title);
-    console.log("Author: " + books[index].author);
+
+books.forEach(function(book,index ){
+    console.log("Book # " + (index + 1));
+    console.log("Title: " + book.title);
+    console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+
+    console.log(book.rent());
     console.log("---");
   });
 // end loop here
-
+// rent function used at books object property Rent
+function rent(xDate){
+    var rentedDate = xDate;
+    xDate.setDate(rentedDate.getDate()+14)
+  return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + xDate;
+}
 
 })();

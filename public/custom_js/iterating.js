@@ -6,9 +6,9 @@
   //   for (var i = 0; i < names.length; i++) {
   //     console.log(names[i]);
   //   }
-  //   names.forEach(function (element, index, array){
-  //     console.log("The name at index " + index + " is " + element);
-  //   });
+    names.forEach(function (element, index, array){
+      console.log("The name at index " + index + " is " + element);
+    });
   //   for (var j = 0; j < 10; j++) {
   //     numbers[j] = j+1;
   //     console.log(numbers[j]);
