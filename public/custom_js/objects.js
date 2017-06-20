@@ -84,131 +84,121 @@ var books  = [
         return "Avaliable Now!"
       }
     },
-    // {
-    //   title: "Bad Monkeys",
-    //   author: {
-    //     firstName: "Matt",
-    //     lastName: "Ruff"
-    //   },
-    //   genre: "Thriller",
-    //   available: true,
-    //   rent: function(){
-    //
-    //     if (this.available == true) {
-    //       this.available = false;
-    //     }
-    //       var rentedDate = new Date();
-    //       var avaliableDate = new Date();
-    //       avaliableDate.setDate(rentedDate.getDate() + 14);
-    //       return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
-    //   },
-    //   return: function(){
-    //     if (this.avaliable == false) {
-    //       this.avaliable = true;
-    //     }
-    //     return "Avaliable Now!"
-    //   }
-    // },
-    // {
-    //   title: "The Orphan's Tale",
-    //   author: {
-    //     firstName: "Pam",
-    //     lastName: "Jenoff"
-    //   },
-    //   genre: "Historical Fiction",
-    //   available: true,
-    //   rent: function(){
-    //
-    //     if (this.available == true) {
-    //       this.available = false;
-    //     }
-    //       var rentedDate = new Date();
-    //       var avaliableDate = new Date();
-    //       avaliableDate.setDate(rentedDate.getDate() + 14);
-    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
-    //   },
-    //   return: function(){
-    //     if (this.avaliable == false) {
-    //       this.avaliable = true;
-    //     }
-    //     return "Avaliable Now!"
-    //   }
-    // },
-    // {
-    //   title: "Knowing God by Name",
-    //   author: {
-    //     firstName: "David",
-    //     lastName: "Wilkerson"
-    //   },
-    //   genre: "Religous Fiction",
-    //   available: true,
-    //   rent: function(){
-    //
-    //     if (this.available == true) {
-    //       this.available = false;
-    //     }
-    //       var rentedDate = new Date();
-    //       var avaliableDate = new Date();
-    //       avaliableDate.setDate(rentedDate.getDate() + 14);
-    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
-    //   },
-    //   return: function(){
-    //     if (this.avaliable == false) {
-    //       this.avaliable = true;
-    //     }
-    //     return "Avaliable Now!"
-    //   }
-    // },
-    // {
-    //   title: "Grey",
-    //   author: {
-    //     firstName: "E L",
-    //     lastName: "Jamesk"
-    //   },
-    //   genre: "Mysterey",
-    //   available: true,
-    //   rent: function(){
-    //
-    //     if (this.available == true) {
-    //       this.available = false;
-    //     }
-    //       var rentedDate = new Date();
-    //       var avaliableDate = new Date();
-    //       avaliableDate.setDate(rentedDate.getDate() + 14);
-    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
-    //   },
-    //   return: function(){
-    //     if (this.avaliable == false) {
-    //       this.avaliable = true;
-    //     }
-    //     return "Avaliable Now!"
-    //   }
-    // },
-    // {
-    //   title: "Four Friends",
-    //   author: {
-    //     firstName: "Robyn",
-    //     lastName: "Carr"
-    //   },
-    //   genre: "Slice of Life",
-    //   available: true,
-    //   rent: function(){
-    //
-    //     if (this.available == true) {
-    //       this.available = false;
-    //     }
-    //       var rentedDate = new Date();
-    //       var avaliableDate = new Date();
-    //       avaliableDate.setDate(rentedDate.getDate() + 14);
-    //     return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + avaliableDate;
-    //   },
-    //   return: function(){
-    //     if (this.avaliable == false) {
-    //       this.avaliable = true;
-    //     }
-    //     return "Avaliable Now!"
-    //   }
-    // }
+    {
+      title: "Bad Monkeys",
+      author: {
+        firstName: "Matt",
+        lastName: "Ruff"
+      },
+      genre: "Thriller",
+      available: true,
+      avaliableDate: new Date(),
+      rent: function(){
+        if (this.available == true) {
+          this.available = false;
+        }
+
+        return rent(this.avaliableDate);
+      },
+      return: function(){
+        if (this.avaliable == false) {
+          this.avaliable = true;
+        }
+        return "Avaliable Now!"
+      }
+    },
+    {
+      title: "The Orphan's Tale",
+      author: {
+        firstName: "Pam",
+        lastName: "Jenoff"
+      },
+      genre: "Historical Fiction",
+      available: true,
+      avaliableDate: new Date(),
+      rent: function(){
+        if (this.available == true) {
+          this.available = false;
+        }
+
+        return rent(this.avaliableDate);
+      },
+      return: function(){
+        if (this.avaliable == false) {
+          this.avaliable = true;
+        }
+        return "Avaliable Now!"
+      }
+    },
+    {
+      title: "Knowing God by Name",
+      author: {
+        firstName: "David",
+        lastName: "Wilkerson"
+      },
+      genre: "Religous Fiction",
+      available: true,
+      avaliableDate: new Date(),
+      rent: function(){
+        if (this.available == true) {
+          this.available = false;
+        }
+
+        return rent(this.avaliableDate);
+      },
+      return: function(){
+        if (this.avaliable == false) {
+          this.avaliable = true;
+        }
+        return "Avaliable Now!"
+      }
+    },
+    {
+      title: "Grey",
+      author: {
+        firstName: "E L",
+        lastName: "Jamesk"
+      },
+      genre: "Mysterey",
+      available: true,
+      avaliableDate: new Date(),
+      rent: function(){
+        if (this.available == true) {
+          this.available = false;
+        }
+
+        return rent(this.avaliableDate);
+      },
+      return: function(){
+        if (this.avaliable == false) {
+          this.avaliable = true;
+        }
+        return "Avaliable Now!"
+      }
+    },
+    {
+      title: "Four Friends",
+      author: {
+        firstName: "Robyn",
+        lastName: "Carr"
+      },
+      genre: "Slice of Life",
+      available: true,
+      avaliableDate: new Date(),
+      rent: function(){
+        if (this.available == true) {
+          this.available = false;
+        }
+
+        return rent(this.avaliableDate);
+      },
+      return: function(){
+        if (this.avaliable == false) {
+          this.avaliable = true;
+        }
+        return "Avaliable Now!"
+      }
+    }
 ];
 // Each book should have a title and an author property.
 // The author property should be an object with a firstName and lastName.
@@ -226,8 +216,8 @@ books.forEach(function(book,index ){
     console.log("Book # " + (index + 1));
     console.log("Title: " + book.title);
     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-
     console.log(book.rent());
+    console.log(book.return());
     console.log("---");
   });
 // end loop here
