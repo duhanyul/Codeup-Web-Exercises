@@ -70,14 +70,14 @@ var books  = [
       genre: "Fantasy",
       available: true,
       avaliableDate: new Date(),
-      rent: function(){
+      rentBook: function(){
         if (this.available == true) {
           this.available = false;
         }
 
-        return rent(this.avaliableDate);
+        return rent();
       },
-      return: function(){
+      returnBook: function(){
         if (this.avaliable == false) {
           this.avaliable = true;
         }
@@ -93,14 +93,14 @@ var books  = [
       genre: "Thriller",
       available: true,
       avaliableDate: new Date(),
-      rent: function(){
+      rentBook: function(){
         if (this.available == true) {
           this.available = false;
         }
 
         return rent(this.avaliableDate);
       },
-      return: function(){
+      returnBook: function(){
         if (this.avaliable == false) {
           this.avaliable = true;
         }
@@ -116,14 +116,14 @@ var books  = [
       genre: "Historical Fiction",
       available: true,
       avaliableDate: new Date(),
-      rent: function(){
+      rentBook: function(){
         if (this.available == true) {
           this.available = false;
         }
 
         return rent(this.avaliableDate);
       },
-      return: function(){
+      returnBook: function(){
         if (this.avaliable == false) {
           this.avaliable = true;
         }
@@ -139,14 +139,14 @@ var books  = [
       genre: "Religous Fiction",
       available: true,
       avaliableDate: new Date(),
-      rent: function(){
+      rentBook: function(){
         if (this.available == true) {
           this.available = false;
         }
 
         return rent(this.avaliableDate);
       },
-      return: function(){
+      returnBook: function(){
         if (this.avaliable == false) {
           this.avaliable = true;
         }
@@ -162,14 +162,14 @@ var books  = [
       genre: "Mysterey",
       available: true,
       avaliableDate: new Date(),
-      rent: function(){
+      rentBook: function(){
         if (this.available == true) {
           this.available = false;
         }
 
         return rent(this.avaliableDate);
       },
-      return: function(){
+      returnBook: function(){
         if (this.avaliable == false) {
           this.avaliable = true;
         }
@@ -185,14 +185,14 @@ var books  = [
       genre: "Slice of Life",
       available: true,
       avaliableDate: new Date(),
-      rent: function(){
+      rentBook: function(){
         if (this.available == true) {
           this.available = false;
         }
 
         return rent(this.avaliableDate);
       },
-      return: function(){
+      returnBook: function(){
         if (this.avaliable == false) {
           this.avaliable = true;
         }
@@ -216,16 +216,17 @@ books.forEach(function(book,index ){
     console.log("Book # " + (index + 1));
     console.log("Title: " + book.title);
     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-    console.log(book.rent());
-    console.log(book.return());
+    console.log(book.rentBook());
+    console.log(book.returnBook());
     console.log("---");
   });
 // end loop here
 // rent function used at books object property Rent
-function rent(xDate){
-    var rentedDate = xDate;
-    xDate.setDate(rentedDate.getDate()+14)
-  return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + xDate;
+function rent(){
+    var rentedDate = new Date();
+    var returnDate = new Date();
+    returnDate.setDate(rentedDate.getDate()+14)
+  return "Unavaliable was rented out " + rentedDate + ".Will be avaliable " + returnDate;
 }
 
 })();
