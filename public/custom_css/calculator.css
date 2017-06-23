@@ -5,17 +5,19 @@
   background-color: red;
   padding: 2em;
   font-size: 20px;
-
+}
+.pushed{
+  background-color: #800000;
 }
 
 #window{
   color: white;
   width: 300px;
   background-color: black;
-  text-align: justify;
+  text-align: right;
   margin: 0;
   padding: 0;
-  font-size: 25px;
+  font-size: 5em;
 }
 .calcBody{
   background-color: black;

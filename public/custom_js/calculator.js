@@ -17,14 +17,16 @@
       // console.log(window);
     }else if (i.target.innerHTML == "=") {
       rpn(window.innerHTML);
-    }else {
+    }
+    else {
       window.innerHTML += i.target.innerHTML;
+
     }
 
 
 
-
    });
+
  });
  /******************* FUNCTIONS ********************/
 // Clears the field
@@ -81,13 +83,23 @@
   //  console.log(input);
    for (var i = 0; i < input.length; i++) {
     if (input[i] == "x") {
-      input[i] = " ";
-      input.push(" *")
+      if (input[i-2] == "x"||input[i-2] == "/") {
+        input[i] = " "
+        input.push(" *")
+      }else {
+        input[i] = " "
+        input.splice(input.length-1,0," *")
+      }
       console.log(input);
       continue;
     }else if (input[i] == "/") {
-      input[i] = " ";
-      input.push(" /");
+      if (input[i-2] == "x"||input[i-2] == "/") {
+        input[i] = " "
+        input.push(" /")
+      }else {
+        input[i] = " "
+        input.splice(input.length-1,0," /")
+      }
       continue;
     }else if (input[i] == "+") {
       input[i] = " ";
@@ -103,6 +115,16 @@
    console.log(result);
    return evaluate(result);
  }
+function oneDecimal(expression){
+    var a;
+    a = expression.search(".");
+    if (a == -1) {
+      return false;
+    }else {
+      return true;
+    }
+  }
+
 
 
 }());
