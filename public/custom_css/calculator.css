@@ -1,0 +1,28 @@
+.calcButtons{
+  height: 100px;
+  width: 100px;
+  border-width: 1px;
+  border-color: black;
+  background-color: red;
+  padding: 2em;
+  font-size: 20px;
+  display: inline-block;
+
+
+
+}
+#window{
+  height: 100px;
+  width: 400px;
+  font-size: 50px;
+  text-align: right;
+  border-width: 1px;
+  border-color: black;
+  background-color: black;
+  color: white;
+}
+.calcBody{
+  background-color: black;
+  width: 384px;
+  align-content: center;
+}
