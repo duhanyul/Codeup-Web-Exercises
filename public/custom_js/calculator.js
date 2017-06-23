@@ -48,21 +48,21 @@
         console.log(resultStack);
       if (input[i] === "*") {
         console.log(resultStack);
-        resultStack.push(parseInt(a) * parseInt(b));
+        resultStack.push(parseFloat(a) * parseFloat(b));
         console.log(resultStack);
 
       } else if (input[i] === "/") {
         console.log(resultStack);
-        resultStack.push(parseInt(b) / parseInt(a));
+        resultStack.push(parseFloat(b) / parseFloat(a));
         console.log(resultStack);
       }
         else if (input[i] === "+") {
           console.log(resultStack);
-          resultStack.push(parseInt(a) + parseInt(b));
+          resultStack.push(parseFloat(a) + parseFloat(b));
           console.log(resultStack);
       } else if (input[i] === "-") {
         console.log(resultStack);
-        resultStack.push(parseInt(b) - parseInt(a));
+        resultStack.push(parseFloat(b) - parseFloat(a));
         console.log(resultStack);
     }
   }
@@ -76,7 +76,7 @@
 
 
  function rpn(input){
-   var result;
+   var result = [];
    input = Array.from(input);
   //  console.log(input);
    for (var i = 0; i < input.length; i++) {
