@@ -1,8 +1,17 @@
 body{
-  /*background-color: red;*/
+  background-color: magenta;
 }
 #map{
   height: 700px;
   width: 600px;
   border: 1px solid black;
+}
+p{
+  color: lime;
+}
+.red{
+  background-color: black;
+}
+h1{
+  color:white;
 }
