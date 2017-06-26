@@ -16,17 +16,12 @@
       clearOperands();
       // console.log(window);
     }else if (i.target.innerHTML == "=") {
-      rpn(window.innerHTML);
+      rpn(window.innerHTML); 
     }
     else {
       window.innerHTML += i.target.innerHTML;
-
     }
-
-
-
    });
-
  });
  /******************* FUNCTIONS ********************/
 // Clears the field
@@ -76,30 +71,34 @@
  }
 
 
-
+/*  Takes in the string from the window of the calculator and formats it into RPN */
  function rpn(input){
    var result = [];
    input = Array.from(input);
   //  console.log(input);
    for (var i = 0; i < input.length; i++) {
     if (input[i] == "x") {
-      if (input[i-2] == "x"||input[i-2] == "/") {
-        input[i] = " "
-        input.push(" *")
-      }else {
-        input[i] = " "
-        input.splice(input.length-1,0," *")
-      }
+      // if (input[i-2] == "x"||input[i-2] == "/") {
+      //   input[i] = " "
+      //   input.push(" *")
+      // }else {
+      //   input[i] = " "
+      //   input.splice(input.length-1,0," *")
+      // }
+      input[i] = " ";
+      input.push(" *");
       console.log(input);
       continue;
     }else if (input[i] == "/") {
-      if (input[i-2] == "x"||input[i-2] == "/") {
-        input[i] = " "
-        input.push(" /")
-      }else {
-        input[i] = " "
-        input.splice(input.length-1,0," /")
-      }
+      // if (input[i-2] == "x"||input[i-2] == "/") {
+      //   input[i] = " "
+      //   input.push(" /")
+      // }else {
+      //   input[i] = " "
+      //   input.splice(input.length-1,0," /")
+      // }
+      input[i] = " ";
+      input.push(" /");
       continue;
     }else if (input[i] == "+") {
       input[i] = " ";
