@@ -1,4 +1,4 @@
-(function(){
+$(document).ready(function(){
   "use strict";
   // var content = $('#title').html();
   // alert(content);
@@ -7,4 +7,4 @@
   $('h1,p,li').css('background-color','yellow');
   var content = $('h1').html();
   alert(content);
-})();
+});
