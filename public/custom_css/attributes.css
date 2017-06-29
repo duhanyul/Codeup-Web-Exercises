@@ -7,3 +7,9 @@
 body{
   background-color: magenta;
 }
+.display{
+  display: none;
+}
+#myH2{
+  display:none;
+}

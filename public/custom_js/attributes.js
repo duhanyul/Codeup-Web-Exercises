@@ -19,4 +19,14 @@ $(document).ready(function(){
   $('li').click(function(event){
     $(this).parent().children().first().css('color','blue');
   });
+  $('span').click(function(event){
+    $(this).parent().toggle();
+  });
+  $('h3').click(function(event){
+    $(this).next().slideToggle();
+  });
+  setTimeout(function(){
+    $('h2').fadeIn();
+  },8000)
+
 });
