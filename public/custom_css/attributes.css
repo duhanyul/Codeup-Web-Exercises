@@ -1,0 +1,9 @@
+.invisible{
+  display: none;
+}
+.highlight{
+  background-color: lime;
+}
+body{
+  background-color: magenta;
+}

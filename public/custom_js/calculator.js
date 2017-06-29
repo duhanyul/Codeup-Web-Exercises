@@ -16,7 +16,7 @@
       clearOperands();
       // console.log(window);
     }else if (i.target.innerHTML == "=") {
-      rpn(window.innerHTML); 
+      rpn(window.innerHTML);
     }
     else {
       window.innerHTML += i.target.innerHTML;
@@ -52,22 +52,21 @@
         console.log(resultStack);
         resultStack.push(parseFloat(b) / parseFloat(a));
         console.log(resultStack);
-      }
-        else if (input[i] === "+") {
+      }else{
+        if (input[i] === "+") {
           console.log(resultStack);
           resultStack.push(parseFloat(a) + parseFloat(b));
           console.log(resultStack);
-      } else if (input[i] === "-") {
-        console.log(resultStack);
-        resultStack.push(parseFloat(b) - parseFloat(a));
-        console.log(resultStack);
-    }
+        }else if (input[i] === "-") {
+          console.log(resultStack);
+          resultStack.push(parseFloat(b) - parseFloat(a));
+          console.log(resultStack);
+        }
+      }
+
   }
 }
-
-
     return window.innerHTML = resultStack.pop();
-
  }
 
 
@@ -75,28 +74,13 @@
  function rpn(input){
    var result = [];
    input = Array.from(input);
-  //  console.log(input);
-   for (var i = 0; i < input.length; i++) {
+   for (var i = 0; i < input.length + 1; i++) {
     if (input[i] == "x") {
-      // if (input[i-2] == "x"||input[i-2] == "/") {
-      //   input[i] = " "
-      //   input.push(" *")
-      // }else {
-      //   input[i] = " "
-      //   input.splice(input.length-1,0," *")
-      // }
       input[i] = " ";
       input.push(" *");
       console.log(input);
       continue;
     }else if (input[i] == "/") {
-      // if (input[i-2] == "x"||input[i-2] == "/") {
-      //   input[i] = " "
-      //   input.push(" /")
-      // }else {
-      //   input[i] = " "
-      //   input.splice(input.length-1,0," /")
-      // }
       input[i] = " ";
       input.push(" /");
       continue;
@@ -108,22 +92,15 @@
       input[i] = " ";
       input.push(" -");
       continue;
+    }else if (!isNaN(input[i])) {
+      input.unshift(input[i]);
+      input[i+1] = " "
+      console.log(input);
     }
    }
    result = input.join("");
    console.log(result);
    return evaluate(result);
  }
-function oneDecimal(expression){
-    var a;
-    a = expression.search(".");
-    if (a == -1) {
-      return false;
-    }else {
-      return true;
-    }
-  }
-
-
 
 }());
