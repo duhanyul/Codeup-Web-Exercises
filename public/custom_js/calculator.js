@@ -77,30 +77,40 @@
    for (var i = 0; i < input.length + 1; i++) {
     if (input[i] == "x") {
       input[i] = " ";
-      input.push(" *");
+      result.push("*");
       console.log(input);
       continue;
     }else if (input[i] == "/") {
       input[i] = " ";
-      input.push(" /");
+      result.push("/");
       continue;
     }else if (input[i] == "+") {
       input[i] = " ";
-      input.push(" +");
+      result.push("+");
       continue;
     }else if (input[i] == "-") {
       input[i] = " ";
-      input.push(" -");
+      result.push("-");
       continue;
-    }else if (!isNaN(input[i])) {
-      input.unshift(input[i]);
-      input[i+1] = " "
-      console.log(input);
     }
    }
-   result = input.join("");
+   for (var i = 0; i < result.length; i++) {
+     if (result[i] == "+" || result[i] == "-") {
+       result.push(result[i]);
+     }
+   }
+   var x = input.join("");
+   console.log(x);
+   x = x.split(" ")
+   console.log(x);
+  //  x.reverse();
+   console.log(x);
+   for (var i = 0; i < result.length; i++) {
+     x.push(result[i])
+   }
+   result = x.join(" ");
    console.log(result);
-   return evaluate(result);
+return evaluate(result);
  }
 
 }());
