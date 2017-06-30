@@ -15,7 +15,7 @@
         #animate-box {
             background-color: #000033;
             height: 250px;
-            margin: 15px;
+            margin: auto;
             position: relative;
             width: 250px;
         }
@@ -44,9 +44,10 @@
         });
         // TODO: "Scale It" should expand the box width by 50%
         $('#btn-scale').click(function(){
+          var currentWidth = parseInt($('#animate-box').css("width"));
           $('#animate-box').animate({
-            width: "+=50%"
-          },1000);
+            width: (currentWidth * 1.5) + "px"
+          },700);
         });
         // TODO: "Hide It" should use opacity to make the box invisible
         $('#btn-hide').click(function(){
@@ -74,6 +75,7 @@
             width: "250px",
             margin: "15px",
             right: "0",
+            margin: "auto",
             opacity: "1"
           },3000);
         });
