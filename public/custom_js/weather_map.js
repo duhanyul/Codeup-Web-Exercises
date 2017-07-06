@@ -1,20 +1,51 @@
 $(document).ready(function(){
   "use script"
+  makeMap();
+  makeRequest();
 
+
+
+
+  function makeMap(){
+    var mapElement = document.getElementById('map');
+    var latLng = {
+      lat: 29.447285,
+      lng: -98.49166
+    };
+    var mapOptions = {
+      zoom: 15,
+      center: latLng
+    }
+    var map = new google.maps.Map(mapElement, mapOptions);
+    makeMarker(map,latLng);
+  }
+  function makeMarker(map,latLng){
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map,
+      draggable:true
+    });
+  }
+
+
+
+
+function makeRequest(){
   var request = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
 
-        APPID: "8e5666d8c0efd6106c3db5998632d798",
-        q:     "San Antonio, TX",
-        units: "imperial"
-});
-request.done(function(data){
-  console.log(data);
-  weatherBoxes(data);
-});
-request.fail(function(jqXhr, status, error){
-  console.log(status);
-  console.log(error);
-});
+    APPID: "8e5666d8c0efd6106c3db5998632d798",
+    q:     "San Antonio, TX",
+    units: "imperial"
+  });
+  request.done(function(data){
+    console.log(data);
+    weatherBoxes(data);
+  });
+  request.fail(function(jqXhr, status, error){
+    console.log(status);
+    console.log(error);
+  });
+}
 function weatherBoxes(weatherData){
 
   for (var i = 0; i < 3; i++) {

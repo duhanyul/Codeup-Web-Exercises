@@ -4,6 +4,7 @@
   border: 1px solid black;
   text-align: center;
   position: relative;
+  padding: 0;
 }
 .days{
   margin-top: 1.5em;
@@ -14,4 +15,8 @@
 .weatherType{
   white-space: nowrap;
 
+}
+#map{
+  height: 400px;
+  width: 700px;
 }
