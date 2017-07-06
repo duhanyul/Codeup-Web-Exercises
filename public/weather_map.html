@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/custom_css/weather_map.css">
+    <title>Weather</title>
+  </head>
+  <body>
+      <div class="container">
+        <h1>MY WEATHER API </h1>
+        <div class="row">
+          <div class="weatherBoxes col-xs-4">
+            <div class="days"id="day0"></div>
+            <div class="icon"id="icon0"></div>
+            <div class="weatherType"id="w0"></div>
+            <div id="humidity0"></div>
+            <div id="wind0"></div>
+            <div id="pressure0"></div>
+          </div>
+          <div class="weatherBoxes col-xs-4">
+            <div class="days"id="day1"></div>
+            <div class="icon"id="icon1"></div>
+            <div class="weatherType"id="w1"></div>
+            <div id="humidity1"></div>
+            <div id="wind1"></div>
+            <div id="pressure1"></div>
+          </div>
+          <div class="weatherBoxes col-xs-4">
+            <div class="days"id="day2"></div>
+            <div class="icon"id="icon2"></div>
+            <div class="weatherType"id="w2"></div>
+            <div id="humidity2"></div>
+            <div id="wind2"></div>
+            <div id="pressure2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="map">
+
+          </div>
+        </div>
+      </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhJD4JLUWsnucgDzEyp78hgG9B_Mox4FU"></script>
+  <script type="text/javascript"src="custom_js/weather_map.js"></script>
+  </body>
+</html>
