@@ -21,6 +21,7 @@
   height:60vh;
   width: inherit;
   margin-bottom: 5em;
+  border: 1px solid black;
 }
 body{
   background-color: #404040;
@@ -34,4 +35,7 @@ h1{
   color: #f2f2f2;
   font-family: helvetica;
   letter-spacing: .3em;
+}
+#day6{
+  margin-left: 33.3%;
 }
