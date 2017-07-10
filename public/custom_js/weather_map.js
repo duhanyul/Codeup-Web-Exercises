@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
   "use script"
     /************ Initialize the first Map ***********/
     makeMap("start");
@@ -30,8 +30,6 @@
         $('#day' + i).hide();
       }
     });
-    console.log($('#day0').html());
-
     /************ FUNCTIONS ****************/
 
     // Handles the Search bar to generate a map based on search value
@@ -58,6 +56,7 @@
   // Makes map depending on coordinates unless the parameter passed is "start"
 
   function makeMap(input){
+    // Initial Map
     if (input == "start") {
       var infowindow
       var mapElement = document.getElementById('map');
@@ -82,7 +81,7 @@
                 content: contentString
               });
             infowindow.open(map,marker);
-            
+
           });
 
       google.maps.event.addListener(marker, 'dragend', function (event) {
@@ -91,6 +90,7 @@
         latLng.lng = this.getPosition().lng();
         makeRequest(latLng)
       });
+      // map based on passed coordinates 
     }else {
       var infowindow
       var mapElement = document.getElementById('map');
@@ -126,17 +126,13 @@
   // Makes Request to Weather API then fires Weather Box function
 
   function makeRequest(latlng){
-    console.log(latlng);
     var request = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-
       APPID: "8e5666d8c0efd6106c3db5998632d798",
       lat: latlng.lat,
       lon: latlng.lng,
       units: "imperial"
     });
     request.done(function(data){
-      console.log(data);
-
       weatherBoxes(data);
     });
     request.fail(function(jqXhr, status, error){
@@ -148,25 +144,19 @@
 
   function weatherBoxes(weatherData){
     $('.zone').html(weatherData.city.name)
-
     for (var i = 0; i < 7; i++) {
       $('#temps' + i).html(parseInt(weatherData.list[i].temp.max)+ "°/"+ parseInt(weatherData.list[i].temp.min)+ "°");
-    };
-    for (var i = 0; i < 7; i++) {
+
       $('#w' + i).html(weatherData.list[i].weather[0].main + ": " + weatherData.list[i].weather[0].description);
-    };
-    for (var i = 0; i < 7; i++) {
+
       $('#humidity' + i).html("Humidity: " + weatherData.list[i].humidity)
-    };
-    for (var i = 0; i < 7; i++) {
+
       $('#wind' + i).html("Wind: " + parseInt(weatherData.list[i].speed))
-    };
-    for (var i = 0; i < 7; i++) {
+
       $('#pressure' + i).html("Pressure: " + parseInt(weatherData.list[i].pressure))
-    };
-    for (var i = 0; i < 7; i++) {
+
       $('#icon' + i).html("<img src=http://openweathermap.org/img/w/" + weatherData.list[i].weather[0].icon +".png>" )
     }
 
   }
-// });
+});
