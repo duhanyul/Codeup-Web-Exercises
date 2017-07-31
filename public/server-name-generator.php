@@ -1,44 +1,45 @@
 <?php
-$adjectives = [
-"mammoth",
-"giant",
-"spotty",
-"boundless",
-"thoughtful",
-"barbarous",
-"languid",
-"chunky",
-"dizzy",
-"unsightly"
-];
-
-$nouns = [
-  "afterthought",
-  "downtown",
-  "observation",
-  "beginner",
-  "snail",
-  "coal",
-  "car",
-  "wind",
-  "airport",
-  "insurance"
-];
-
-function randomAdj($input){
-  $adj = array_rand($input);
-  return $input[$adj];
+function randomItem($input){
+  $word = array_rand($input);
+  return $input[$word];
 }
+function serverNames($adj,$noun){
+  return randomItem($adj) . randomItem($noun);
+}
+function pageController(){
+  $adjectives = [
+  "mammoth",
+  "giant",
+  "spotty",
+  "boundless",
+  "thoughtful",
+  "barbarous",
+  "languid",
+  "chunky",
+  "dizzy",
+  "unsightly"
+  ];
 
-function randomNoun($input){
-  $noun = array_rand($input);
-  return $input[$noun];
+  $nouns = [
+    "afterthought",
+    "downtown",
+    "observation",
+    "beginner",
+    "snail",
+    "coal",
+    "car",
+    "wind",
+    "airport",
+    "insurance"
+  ];
+
+  $name = serverNames($adjectives,$nouns);
+  return $serverName = [
+    'name' => $name
+  ];
 }
-function serverName($adj,$noun){
-  return ($adj . $noun);
-}
+extract(pageController());
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,6 +48,6 @@ function serverName($adj,$noun){
   </head>
   <body>
     <h1>THIS IS YOUR NEW SERVER NAME</h1>
-    <h2><?= serverName(randomAdj($adjectives),randomNoun($nouns))?></h2>
+    <h2><?= $name?></h2>
   </body>
 </html>

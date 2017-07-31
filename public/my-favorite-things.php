@@ -1,20 +1,28 @@
 <?php
-$favs = ["stuff","things","people","entertainment","you"];
-$contacts = [
+function pageController(){
+  $favs = ["stuff","things","people","entertainment","you"];
+  $contacts = [
     'contact1'=> [
-          "name" => "Jack Blank",
-          "number"=> "123-123-1234"
+      "name" => "Jack Blank",
+      "number"=> "123-123-1234"
     ],
     'contact2'=> [
-          "name" => "Sam Smith",
-          "number"=> "123-321-5432"
+      "name" => "Sam Smith",
+      "number"=> "123-321-5432"
     ],
     'contact3'=> [
-          "name" => "Fred Cat",
-          "number"=> "333-333-3333"
+      "name" => "Fred Cat",
+      "number"=> "333-333-3333"
     ]
 
-];
+  ];
+
+  return $stuff = [
+    'favs' => $favs,
+    'contacts' => $contacts
+  ];
+}
+extract(pageController());
 ?>
 <!DOCTYPE html>
 <html>
