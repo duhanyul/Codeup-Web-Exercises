@@ -44,12 +44,12 @@ $contacts = [
         <th>NAME</th>
         <th>NUMBER</th>
       </tr>
-      <?php foreach($contacts as $key => $person){ ?>
+      <?php foreach ($contacts as $key => $person): ?>
         <tr>
-          <td><?php echo $person['name']; ?></td>
-          <td><?php echo $person['number']; ?></td>
+          <td><?= $person['name']; ?></td>
+          <td><?= $person['number']; ?></td>
         </tr>
-      <?php }?>
+      <?php endforeach?>
     </table>
   </body>
 </html>
