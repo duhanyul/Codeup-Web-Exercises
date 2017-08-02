@@ -1,16 +1,23 @@
 <?php
 function pageController(){
+  session_start();
   $login = (isset($_POST['login'])) ? $_POST['login'] : '';
   $password = (isset($_POST['password'])) ? $_POST['password'] : '';
+  $logged_in_user = (isset($_SESSION['logged_in_user'])) ? $_SESSION['logged_in_user'] : '';
   $data = [
     'error' => 'Enter Your INFO'
   ];
+  if ($logged_in_user == 'guest') {
+    header("Location: authorized.php");
+    die();
+  }
   if (!empty($_POST)) {
     if ($login == 'guest' && $password == 'password') {
-      header("Location: authorized.php?username=$login");
+      $_SESSION['logged_in_user'] = $login;
+      header("Location: authorized.php");
       die();
     }else {
-      $data['error'] = 'invalaid username or password';
+      $data['error'] = 'invalid username or password';
     }
   }else {
     $data['error'] = 'INPUT LOGIN INFO';
