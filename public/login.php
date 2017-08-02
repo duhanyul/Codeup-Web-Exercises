@@ -7,7 +7,7 @@ function pageController(){
   $data = [
     'error' => 'Enter Your INFO'
   ];
-  if ($logged_in_user == 'guest') {
+  if (isset($_SESSION['logged_in_user'])) {
     header("Location: authorized.php");
     die();
   }
