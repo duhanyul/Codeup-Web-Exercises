@@ -5,9 +5,9 @@ function pageController(){
   $data = [
     'error' => 'Enter Your INFO'
   ];
-  if ($login !== '' && $password !== '') {
+  if (!empty($_POST)) {
     if ($login == 'guest' && $password == 'password') {
-      header("Location: authorized.php");
+      header("Location: authorized.php?username=$login");
       die();
     }else {
       $data['error'] = 'invalaid username or password';
