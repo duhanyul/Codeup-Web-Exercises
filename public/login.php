@@ -1,9 +1,9 @@
 <?php
+session_start();
+require "lib.php";
 function pageController(){
-  session_start();
-  $login = (isset($_POST['login'])) ? $_POST['login'] : '';
-  $password = (isset($_POST['password'])) ? $_POST['password'] : '';
-  $logged_in_user = (isset($_SESSION['logged_in_user'])) ? $_SESSION['logged_in_user'] : '';
+  $login = inputGetKey('login');
+  $password = inputGetKey('password');
   $data = [
     'error' => 'Enter Your INFO'
   ];
