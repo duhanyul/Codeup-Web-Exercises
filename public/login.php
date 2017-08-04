@@ -1,9 +1,10 @@
 <?php
 session_start();
 require "lib.php";
+include "../Input.php";
 function pageController(){
-  $login = inputGetKey('login');
-  $password = inputGetKey('password');
+  $login = Input::get('login');
+  $password = Input::get('password');
   $data = [
     'error' => 'Enter Your INFO'
   ];
