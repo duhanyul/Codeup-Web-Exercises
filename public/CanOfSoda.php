@@ -11,9 +11,8 @@ class CanOfSoda{
   public function openSoda(){
     if (!$this->isOpen) {
       $this->isOpen = true;
-      return $this->isOpen;
     }else
-    return 'the soda is open already' . PHP_EOL;
+    echo 'the soda is open already' . PHP_EOL;
   }
 
   public function pourOut(){
