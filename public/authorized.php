@@ -1,6 +1,7 @@
 <?php
+require_once "../Auth.php";
   session_start();
-  if (!isset($_SESSION['logged_in_user'])) {
+  if (!Auth::check()) {
     header("Location: login.php");
   }
  ?>

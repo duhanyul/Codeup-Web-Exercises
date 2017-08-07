@@ -1,31 +1,41 @@
 <?php
 session_start();
 require "lib.php";
-include "../Input.php";
+require_once "../Input.php";
+require_once "../Auth.php";
+
+
 function pageController(){
-  $login = Input::get('login');
-  $password = Input::get('password');
   $data = [
     'error' => 'Enter Your INFO'
   ];
-  if (isset($_SESSION['logged_in_user'])) {
+
+  if (Auth::check()) {
+
     header("Location: authorized.php");
     die();
+
   }
-  if (!empty($_POST)) {
-    if ($login == 'guest' && $password == 'password') {
-      $_SESSION['logged_in_user'] = $login;
-      header("Location: authorized.php");
-      die();
-    }else {
-      $data['error'] = 'invalid username or password';
-    }
-  }else {
-    $data['error'] = 'INPUT LOGIN INFO';
+  $username = Input::get('username');
+  $password = Input::get('password');
+    if (!empty($_POST)) {
+
+      if (Auth::attempt($username,$password)) {
+
+        header("Location: authorized.php");
+        die();
+
+      }else {
+
+        $data['error'] = "INVALID USERNAME AND PASSWORD";
+
+      }
   }
   return $data;
 }
+
 extract(pageController());
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -42,7 +52,7 @@ extract(pageController());
     <h2><?= $error?></h2>
     <form method="post">
       <label for="login">LOGIN:</label>
-      <input type="text" name="login" value="" id="login">
+      <input type="text" name="username" value="" id="login">
       <label for="password">PASSWORD:</label>
       <input type="password" name="password" value="" id="password">
       <input type="submit" name="" value="LOGIN">
