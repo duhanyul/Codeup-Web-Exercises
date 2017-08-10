@@ -1,6 +1,6 @@
 <?php
 
-require_once 'env.php';
+require_once 'parks_credentials.php';
 
 $dbc = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME,DB_USER,DB_PASS);
 
