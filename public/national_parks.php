@@ -59,6 +59,9 @@ extract(pageController($dbc));
        body{
          background-image: url('/img/park_background.jpg');
        }
+       .title{
+         font-size: 10vh;
+       }
        table{
          background-color: white;
        }
@@ -75,13 +78,16 @@ extract(pageController($dbc));
        }
      </style>
   </head>
+
   <body>
     <div class="container">
-      <h1 class="jumbotron text-center">Hey yo we got some wicked Paarks!</h1>
+
+      <h1 class="jumbotron text-center title">Hey yo we got some wicked Paarks!</h1>
 
       <h2>Page: <?= $page_number?></h1>
 
       <table class="table">
+
         <tr>
           <th>Park Name</th>
           <th>Location</th>
@@ -98,6 +104,7 @@ extract(pageController($dbc));
           </tr>
         <?php endforeach; ?>
       </table>
+
       <div class='text-center'>
         <img src="img/wicked_smaht.gif" alt="">
       </div>
@@ -109,7 +116,7 @@ extract(pageController($dbc));
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       var getRequest = "<?=$page_number?>";
-      console.log(getRequest);
+
       if (parseInt(getRequest) == 1) {
           $('#prev').hide();
         }
@@ -117,6 +124,7 @@ extract(pageController($dbc));
         if (parseInt(getRequest) == 15) {
           $('#next').hide();
         }
+
     </script>
 
   </body>
