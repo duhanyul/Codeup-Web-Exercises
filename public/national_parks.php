@@ -5,11 +5,27 @@ require_once '../Input.php';
 function pageController($dbc){
   $data = [];
 
-  if (!empty($_REQUEST)) {
+  if (!empty($_GET)) {
 
-    $lastPage = 15;
-    if (is_numeric(Input::get('page_number')) && Input::get('page_number') <= $lastPage && Input::get('page_number') >= 1) {
-      $request = Input::get('page_number');
+    $full_list = 'select * from national_parks';
+
+    $fullStmnt = $dbc->query($full_list);
+
+    $all_parks = $fullStmnt->fetchAll(PDO::FETCH_ASSOC);
+
+    $last_park = end($all_parks);
+    $end = $last_park['id'];
+
+    $data['end'] = $end;
+
+    if (is_numeric(Input::get('page_number')) && Input::get('page_number') <= ($end/(4)))
+    {
+
+
+      /******** Current page list *********/
+
+
+      $request = abs(Input::get('page_number'));
 
       $offset = ($request-1) * 4;
 
@@ -17,16 +33,28 @@ function pageController($dbc){
 
       $statement = $dbc->query($query);
 
+      $parks_array = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+      $final_park = end($parks_array);
+      $last = $final_park['id'];
+
+
+
       $data['page_number'] = $request;
-      $data['parks'] = $statement->fetchAll(PDO::FETCH_ASSOC);
-    }else{
+      $data['parks'] = $parks_array;
+      $data['last'] = $last;
+    }
+    else
+    {
       $query = 'select * from national_parks limit 4;';
 
       $statement = $dbc->query($query);
 
 
-      $data['page_number'] = $lastPage;
+      $data['page_number'] = 1;
       $data['parks'] = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $data['end'] = 0;
+      $data['last'] = 1;
     }
 
   }else {
@@ -37,12 +65,37 @@ function pageController($dbc){
 
     $data['page_number'] = 1;
     $data['parks'] = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $data['end'] = 0;
+    $data['last'] = 1;
 
   }
 
+  if (!empty($_POST)) {
+
+    $park_name = Input::get('park_name');
+    $location = Input::get('location');
+    $date = Input::get('date');
+    $area = Input::get('area');
+    $desc = Input::get('desc');
+
+    $newPark = "insert into national_parks (name,location,date_established,area_in_acres,description)
+    values(:park_name,:location,:date,:area,:desc);";
+
+    $stmnt = $dbc->prepare($newPark);
+
+    $stmnt->bindValue(':park_name',$park_name,PDO::PARAM_STR);
+    $stmnt->bindValue(':location',$location,PDO::PARAM_STR);
+    $stmnt->bindValue(':date',$date,PDO::PARAM_STR);
+    $stmnt->bindValue(':area',$area,PDO::PARAM_STR);
+    $stmnt->bindValue(':desc',$desc,PDO::PARAM_STR);
+
+    $stmnt->execute();
+
+  }
   return $data;
 }
 extract(pageController($dbc));
+
 
 ?>
 
@@ -55,28 +108,7 @@ extract(pageController($dbc));
      rel="stylesheet"
      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
      crossorigin="anonymous">
-     <style media="screen">
-       body{
-         background-image: url('/img/park_background.jpg');
-       }
-       .title{
-         font-size: 10vh;
-       }
-       table{
-         background-color: white;
-       }
-       a{
-         font-size: 10vh;
-         color: white;
-       }
-       h2{
-         font-size: 24vh;
-         color: white;
-       }
-       #next{
-         float: right;
-       }
-     </style>
+
   </head>
 
   <body>
@@ -111,17 +143,58 @@ extract(pageController($dbc));
 
       <a id="prev"href="national_parks.php?page_number=<?=$page_number-1?>">Prev</a>
       <a id="next"href="national_parks.php?page_number=<?=$page_number+1?>">Next</a>
+
+      <form method="post">
+          <div class="form-group">
+            <label for="name">Park Name</label>
+            <input type="text" name="park_name" value="" id="name" placeholder="enter your park name" required>
+          </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" name="location" value="" id="location" placeholder="enter your park name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date_established">Date Established</label>
+          <input type="text" name="date" value="" id="date_established" placeholder="enter established date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="area">Area in Square foot</label>
+          <input type="text" name="area" value="" id="area" placeholder="enter park area" required>
+        </div>
+
+        <div class="form-group">
+          <label for="desc">Park Description</label>
+          <input type="text" name="desc" value="" id="desc" placeholder="enter park description">
+        </div>
+
+        <div class="form-group">
+          <input type="submit" name="" value="ADD YOUR PARK">
+        </div>
+
+
+      </form>
     </div>
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       var getRequest = "<?=$page_number?>";
+      console.log(getRequest);
+      var end = "<?=$end?>";
+      console.log(end);
+      var current_end = "<?=$last?>";
+      console.log(current_end);
 
       if (parseInt(getRequest) == 1) {
           $('#prev').hide();
         }
 
-        if (parseInt(getRequest) == 15) {
+        if (end == current_end){
           $('#next').hide();
         }
 
