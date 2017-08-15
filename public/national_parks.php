@@ -131,9 +131,9 @@ extract(pageController());
 
       <a id="prev"href="national_parks.php?page_number=<?=$page_number-1?>&limit=<?=$limit?>">Prev</a>
       <a id="next"href="national_parks.php?page_number=<?=$page_number+1?>&limit=<?=$limit?>">Next</a>
-      <a href="?page_number=<?=$page_number?>&limit=10">10 results per page</a>
-      <a href="?page_number=<?=$page_number?>&limit=4">4 results per page</a>
-      <a href="?page_number=<?=$page_number?>&limit=7">7 results per page</a>
+      <a href="?page_number=1&limit=10">10 results per page</a>
+      <a href="?page_number=1&limit=4">4 results per page</a>
+      <a href="?page_number=1&limit=7">7 results per page</a>
 
       <form method="post">
           <div class="form-group">
