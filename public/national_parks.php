@@ -71,11 +71,11 @@ function pageController(){
   if (!empty($_POST)) {
 
     $park = new Park();
-    $park->name = Input::get('park_name');
-    $park->location = Input::get('location');
-    $park->dateEstablished = Input::get('date');
-    $park->areaInAcres = Input::get('area');
-    $park->description = Input::get('desc');
+    $park->name = Input::escape(Input::get('park_name'));
+    $park->location = Input::escape(Input::get('location'));
+    $park->dateEstablished = Input::escape(Input::get('date'));
+    $park->areaInAcres = Input::escape(Input::get('area'));
+    $park->description = Input::escape(Input::get('desc'));
 
     $park->insert();
 
@@ -120,10 +120,10 @@ extract(pageController());
 
         <?php foreach ($parks as $park): ?>
           <tr>
-            <td><?= $park->name ?></td>
-            <td><?= $park->location ?></td>
-            <td><?= $park->dateEstablished?></td>
-            <td><?= $park->areaInAcres?></td>
+            <td><?= Input::escape($park->name) ?></td>
+            <td><?= Input::escape($park->location) ?></td>
+            <td><?= Input::escape($park->dateEstablished)?></td>
+            <td><?= Input::escape($park->areaInAcres)?></td>
           </tr>
         <?php endforeach; ?>
       </table>
@@ -132,8 +132,8 @@ extract(pageController());
         <img src="img/wicked_smaht.gif" alt="">
       </div>
 
-      <a id="prev"href="national_parks.php?page_number=<?=$page_number-1?>&limit=<?=$limit?>">Prev</a>
-      <a id="next"href="national_parks.php?page_number=<?=$page_number+1?>&limit=<?=$limit?>">Next</a>
+      <a id="prev"href="national_parks.php?page_number=<?=Input::escape($page_number-1)?>&limit=<?=Input::escape($limit)?>">Prev</a>
+      <a id="next"href="national_parks.php?page_number=<?=Input::escape($page_number+1)?>&limit=<?=Input::escape($limit)?>"Next</a>
       <a href="?page_number=1&limit=10">10 results per page</a>
       <a href="?page_number=1&limit=4">4 results per page</a>
       <a href="?page_number=1&limit=7">7 results per page</a>
