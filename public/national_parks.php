@@ -1,100 +1,87 @@
 <?php
-require_once __DIR__ . '/../db_connect.php';
+require_once '../Park.php';
 require_once '../Input.php';
 
-function pageController($dbc){
+function pageController(){
   $data = [];
 
   if (!empty($_GET)) {
 
-    $full_list = 'select * from national_parks';
+    $end = Park::count();
 
-    $fullStmnt = $dbc->query($full_list);
 
-    $all_parks = $fullStmnt->fetchAll(PDO::FETCH_ASSOC);
+    $pageNo = abs(Input::get('page_number'));
 
-    $last_park = end($all_parks);
-    $end = $last_park['id'];
+    if (Input::has('limit')) {
+      $limit = Input::get('limit');
+      if (!is_numeric($limit)) {
+        $limit = 4;
+      }
+    }else {
+      $limit = 4;
+    }
 
-    $data['end'] = $end;
 
-    if (is_numeric(Input::get('page_number')) && Input::get('page_number') <= ($end/(4)))
+    if (is_numeric($pageNo) && $pageNo <= ($end/((int)$limit)+1))
     {
 
+      $parks = Park::paginate($pageNo,$limit);
 
-      /******** Current page list *********/
+      $last = end($parks);
+      $last = $last['id'];
 
-
-      $request = abs(Input::get('page_number'));
-
-      $offset = ($request-1) * 4;
-
-      $query = "select * from national_parks limit 4 offset $offset;";
-
-      $statement = $dbc->query($query);
-
-      $parks_array = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-      $final_park = end($parks_array);
-      $last = $final_park['id'];
+      $pageNo = Input::escape($pageNo);
+      $limit = (int)Input::escape($limit);
 
 
 
-      $data['page_number'] = $request;
-      $data['parks'] = $parks_array;
+
+      $data['page_number'] = $pageNo;
+      $data['parks'] = Park::paginate($pageNo,$limit);
+      $data['end'] = $end;
       $data['last'] = $last;
+      $data['limit'] = $limit;
     }
     else
     {
-      $query = 'select * from national_parks limit 4;';
 
-      $statement = $dbc->query($query);
-
+      $parks = Park::paginate(1);
 
       $data['page_number'] = 1;
-      $data['parks'] = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $data['parks'] = $parks;
       $data['end'] = 0;
       $data['last'] = 1;
+      $data['limit'] = $limit;
     }
 
   }else {
-    $query = 'select * from national_parks limit 4;';
-
-    $statement = $dbc->query($query);
-
+    $parks = Park::paginate(1);
 
     $data['page_number'] = 1;
-    $data['parks'] = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $data['parks'] = $parks;
     $data['end'] = 0;
     $data['last'] = 1;
+    $data['limit'] = 4;
 
   }
 
   if (!empty($_POST)) {
 
-    $park_name = Input::get('park_name');
-    $location = Input::get('location');
-    $date = Input::get('date');
-    $area = Input::get('area');
-    $desc = Input::get('desc');
+    $park = new Park();
+    $park->name = Input::get('park_name');
+    $park->location = Input::get('location');
+    $park->dateEstablished = Input::get('date');
+    $park->areaInAcres = Input::get('area');
+    $park->description = Input::get('desc');
 
-    $newPark = "insert into national_parks (name,location,date_established,area_in_acres,description)
-    values(:park_name,:location,:date,:area,:desc);";
+    $park->insert();
 
-    $stmnt = $dbc->prepare($newPark);
 
-    $stmnt->bindValue(':park_name',$park_name,PDO::PARAM_STR);
-    $stmnt->bindValue(':location',$location,PDO::PARAM_STR);
-    $stmnt->bindValue(':date',$date,PDO::PARAM_STR);
-    $stmnt->bindValue(':area',$area,PDO::PARAM_STR);
-    $stmnt->bindValue(':desc',$desc,PDO::PARAM_STR);
-
-    $stmnt->execute();
 
   }
   return $data;
 }
-extract(pageController($dbc));
+extract(pageController());
 
 
 ?>
@@ -115,6 +102,7 @@ extract(pageController($dbc));
     <div class="container">
 
       <h1 class="jumbotron text-center title">Hey yo we got some wicked Paarks!</h1>
+
 
       <h2>Page: <?= $page_number?></h1>
 
@@ -141,8 +129,11 @@ extract(pageController($dbc));
         <img src="img/wicked_smaht.gif" alt="">
       </div>
 
-      <a id="prev"href="national_parks.php?page_number=<?=$page_number-1?>">Prev</a>
-      <a id="next"href="national_parks.php?page_number=<?=$page_number+1?>">Next</a>
+      <a id="prev"href="national_parks.php?page_number=<?=$page_number-1?>&limit=<?=$limit?>">Prev</a>
+      <a id="next"href="national_parks.php?page_number=<?=$page_number+1?>&limit=<?=$limit?>">Next</a>
+      <a href="?page_number=<?=$page_number?>&limit=10">10 results per page</a>
+      <a href="?page_number=<?=$page_number?>&limit=4">4 results per page</a>
+      <a href="?page_number=<?=$page_number?>&limit=7">7 results per page</a>
 
       <form method="post">
           <div class="form-group">
@@ -157,7 +148,7 @@ extract(pageController($dbc));
 
         <div class="form-group">
           <label for="date_established">Date Established</label>
-          <input type="text" name="date" value="" id="date_established" placeholder="enter established date" required>
+          <input type="date" name="date" value="" id="date_established" placeholder="enter established date" required>
         </div>
 
         <div class="form-group">
