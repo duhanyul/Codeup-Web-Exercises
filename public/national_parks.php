@@ -27,8 +27,11 @@ function pageController(){
 
       $parks = Park::paginate($pageNo,$limit);
 
+
+
       $last = end($parks);
-      $last = $last['id'];
+
+      $last = $last->id;
 
       $pageNo = Input::escape($pageNo);
       $limit = (int)Input::escape($limit);
@@ -117,10 +120,10 @@ extract(pageController());
 
         <?php foreach ($parks as $park): ?>
           <tr>
-            <td><?= $park['name'] ?></td>
-            <td><?= $park['location'] ?></td>
-            <td><?= $park['date_established']?></td>
-            <td><?= $park['area_in_acres']?></td>
+            <td><?= $park->name ?></td>
+            <td><?= $park->location ?></td>
+            <td><?= $park->dateEstablished?></td>
+            <td><?= $park->areaInAcres?></td>
           </tr>
         <?php endforeach; ?>
       </table>
