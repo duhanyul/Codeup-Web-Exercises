@@ -124,7 +124,25 @@ class Park
         $stmt->execute();
         $parks_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        return $parks_array;
+
+        $park_Objs = [];
+
+        foreach ($parks_array as $result) {
+
+          $park = new Park();
+          $park->id = $result['id'];
+          $park->name = $result['name'];
+          $park->location = $result['location'];
+          $park->dateEstablished = $result['date_established'];
+          $park->areaInAcres = $result['area_in_acres'];
+          $park->description = $result['description'];
+
+          $park_Objs[] = $park;
+
+
+        }
+
+        return $park_Objs;
 
 
     }
