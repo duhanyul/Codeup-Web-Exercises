@@ -1,11 +1,9 @@
 <?php
-require_once 'Model.php';
+require_once 'User.php';
 
-$model = new Model();
+$model = new User();
 
-$model->username = 'Danny';
+echo $model->getTableName() . PHP_EOL;
 
-echo $model->password . PHP_EOL;
 
-echo "Your username is: " . $model->username . PHP_EOL;
  ?>

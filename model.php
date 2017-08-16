@@ -4,6 +4,8 @@
      */
     class Model
     {
+        protected static $table;
+
         private $attributes = [];
 
         public function __set($attr,$value){
@@ -17,6 +19,10 @@
                 return "attribute: $attr does not exist";
             }
 
+        }
+
+        public static function getTableName(){
+            return static::$table;
         }
     }
 
