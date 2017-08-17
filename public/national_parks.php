@@ -77,7 +77,7 @@ function pageController(){
     $park->areaInAcres = Input::escape(Input::get('area'));
     $park->description = Input::escape(Input::get('desc'));
 
-    $park->insert();
+    $park->save();
 
 
 
@@ -133,7 +133,7 @@ extract(pageController());
       </div>
 
       <a id="prev"href="national_parks.php?page_number=<?=Input::escape($page_number-1)?>&limit=<?=Input::escape($limit)?>">Prev</a>
-      <a id="next"href="national_parks.php?page_number=<?=Input::escape($page_number+1)?>&limit=<?=Input::escape($limit)?>"Next</a>
+      <a id="next"href="national_parks.php?page_number=<?=Input::escape($page_number+1)?>&limit=<?=Input::escape($limit)?>">Next</a>
       <a href="?page_number=1&limit=10">10 results per page</a>
       <a href="?page_number=1&limit=4">4 results per page</a>
       <a href="?page_number=1&limit=7">7 results per page</a>

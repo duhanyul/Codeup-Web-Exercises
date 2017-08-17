@@ -1,6 +1,11 @@
 <?php
 require 'Park.php';
 
-$parks = Park::all();
-var_dump(end($parks));
+$park = new Park();
+
+$park->id = 1;
+$park->location = 'somewhere';
+
+
+var_dump($park);
  ?>

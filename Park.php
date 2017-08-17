@@ -29,7 +29,8 @@
  *      $park->insert();
  *
  */
-class Park
+ require_once "Model.php";
+class Park extends Model
 {
 
     ///////////////////////////////////
@@ -39,7 +40,10 @@ class Park
     /**
      * our connection to the database
      */
+
+    
     public static $dbc = null;
+
 
     /**
      * establish a database connection if we do not have one
@@ -154,17 +158,11 @@ class Park
     /**
      * properties that represent columns from the database
      */
-    public $id;
-    public $name;
-    public $location;
-    public $dateEstablished;
-    public $areaInAcres;
-    public $description;
 
     /**
      * inserts a record into the database
      */
-    public function insert() {
+    protected function insert() {
 
         self::dbConnect();
 
@@ -197,5 +195,9 @@ class Park
 
 
 
+    }
+
+    protected function update(){
+        return 'hi';
     }
 }
