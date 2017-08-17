@@ -37,29 +37,7 @@ class Park extends Model
     // Static Methods and Properties //
     ///////////////////////////////////
 
-    /**
-     * our connection to the database
-     */
-
     
-    public static $dbc = null;
-
-
-    /**
-     * establish a database connection if we do not have one
-     */
-    public static function dbConnect() {
-
-        require 'db_connect.php';
-
-        if (! is_null(self::$dbc)) {
-            return;
-        }
-
-        self::$dbc = $connection;
-
-    }
-
     /**
      * returns the number of records in the database
      */
